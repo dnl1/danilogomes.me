@@ -50,8 +50,7 @@ Designed for:
 │   ├── mdx.tsx
 │   ├── music-card.tsx
 │   ├── navbar.tsx
-│   ├── project-card.tsx
-│   └── theme-toggle.tsx
+│   └── project-card.tsx
 ├── content
 │   ├── blog
 │   │   └── first-post.mdx
@@ -110,7 +109,7 @@ Additional fields can be used per section (for example: `company`, `techStack`, 
 
 ## Features included
 
-- Dark theme (default) with toggle
+- Dark theme
 - Responsive layout
 - SEO metadata per route
 - OpenGraph and Twitter metadata

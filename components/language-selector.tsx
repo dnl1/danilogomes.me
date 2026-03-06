@@ -7,7 +7,7 @@ import { FlagIcon } from "@/components/flag-icon";
 import type { Locale } from "@/i18n/routing";
 
 const languageOptions: Array<{ value: Locale; label: string; flag: "us" | "br" }> = [
-  { value: "pt", label: "Português (BR)", flag: "br" },
+  { value: "pt", label: "Português", flag: "br" },
   { value: "en", label: "English", flag: "us" }
 ];
 

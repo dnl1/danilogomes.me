@@ -14,7 +14,8 @@ function EmbedFrame({ url, title = "Embedded media" }: EmbedProps) {
         className="h-[380px] w-full"
         loading="lazy"
         referrerPolicy="strict-origin-when-cross-origin"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox allow-presentation"
+        allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
         allowFullScreen
       />
     </div>
