@@ -40,6 +40,38 @@ export default async function AboutPage() {
           </ul>
         </div>
         <section className="mt-10 rounded-2xl border border-line/80 bg-black/20 p-6">
+          <p className="font-mono text-xs text-brand">{t("educationHeading")}</p>
+          <div className="mt-4 space-y-3">
+            {[
+              {
+                institution: t("education1Institution"),
+                degree: t("education1Degree"),
+                field: t("education1Field"),
+                period: t("education1Period")
+              },
+              {
+                institution: t("education2Institution"),
+                degree: t("education2Degree"),
+                field: t("education2Field"),
+                period: t("education2Period")
+              },
+              {
+                institution: t("education3Institution"),
+                degree: t("education3Degree"),
+                field: t("education3Field"),
+                period: t("education3Period")
+              }
+            ].map((item) => (
+              <div key={`${item.institution}-${item.degree}`} className="rounded-lg border border-line/70 bg-black/20 px-4 py-4">
+                <p className="text-sm font-medium text-fg">{item.institution}</p>
+                <p className="mt-1 text-sm text-muted">{item.degree}</p>
+                <p className="mt-1 text-sm text-muted">{item.field}</p>
+                <p className="mt-2 font-mono text-xs text-muted">{item.period}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="mt-10 rounded-2xl border border-line/80 bg-black/20 p-6">
           <p className="font-mono text-xs text-brand">{t("languagesHeading")}</p>
           <div className="mt-4 grid gap-3 md:grid-cols-2">
             <div className="rounded-lg border border-line/70 bg-black/20 px-4 py-3">
