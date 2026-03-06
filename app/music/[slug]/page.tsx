@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { SpotifyEmbed, SoundCloudEmbed, YouTubeEmbed } from "@/components/mdx";
 import type { Locale } from "@/i18n/routing";
@@ -38,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function MusicDetailsPage({ params }: Props) {
   const locale = (await getLocale()) as Locale;
+  const layoutT = await getTranslations("Layout");
   const { slug } = await params;
   const track = await getContentBySlug(locale, "music", slug);
 
@@ -47,6 +49,7 @@ export default async function MusicDetailsPage({ params }: Props) {
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} fallbackHref="/music" />
       <article className="mx-auto max-w-3xl">
         <p className="font-mono text-sm text-brand">{formatDate(track.frontmatter.date, locale)}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{track.frontmatter.title}</h1>

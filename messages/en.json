@@ -17,7 +17,8 @@
     "label": "Select language"
   },
   "Layout": {
-    "skipToContent": "Skip to content"
+    "skipToContent": "Skip to content",
+    "back": "Go back"
   },
   "SocialLinks": {
     "professional": "Professional",
@@ -40,7 +41,7 @@
   },
   "HomePage": {
     "eyebrow": "> portfolio.init()",
-    "title": "Software and AI Engineer focused on complex financial and enterprise systems.",
+    "title": "Software and AI Engineer for financial and enterprise systems.",
     "description": "I design and build distributed backends, event-driven platforms, modern web systems, and AI-powered products with a focus on performance, reliability, and long-term maintainability.",
     "viewProjects": "View Professional Experience",
     "listenToMusic": "Explore Music",
@@ -109,7 +110,7 @@
     "heading": "Personal Projects",
     "intro": "A set of personal systems built as serious engineering work, shaped by concrete workflows, product constraints, and practical operational needs.",
     "summaryTitle": "Independent Systems",
-    "summaryDescription": "I built these projects to solve real problems with the same mindset I apply to production systems: clear domain modeling, technical tradeoffs, maintainability, and product usability.",
+    "summaryDescription": "These systems are in production today, built to solve real problems with a focus on domain design, maintainability, and usability. If you are interested in any of them, get in touch.",
     "projectsTitle": "Selected Personal Systems"
   },
   "ExperiencePage": {
@@ -128,13 +129,14 @@
     "tag6": "Technical leadership",
     "timelineTitle": "Professional Timeline",
     "location": "Location",
+    "areas": "Area of Work",
     "progression": "Career Progression",
     "responsibilities": "Responsibilities",
     "technologies": "Technologies",
     "impact": "Impact",
     "present": "Present",
     "profileTitle": "Profile + CV",
-    "profileDescription": "The experience section now works as a portfolio entry point, with static profile assets available directly from the project.",
+    "profileDescription": "This section brings together my professional trajectory, core responsibilities, and direct access to my CV.",
     "viewCv": "Open CV",
     "downloadCv": "Download CV",
     "photoAlt": "Portrait of Danilo Gomes"
@@ -191,6 +193,9 @@
     "screenshotsDescription": "The screenshots below come first so the product can be understood visually before the technical breakdown.",
     "screenshotAlt": "{title} screenshot",
     "openScreenshot": "Open screenshot",
-    "closeScreenshot": "Close screenshot preview"
+    "closeScreenshot": "Close screenshot preview",
+    "previousScreenshot": "Previous screenshot",
+    "nextScreenshot": "Next screenshot",
+    "screenshotPagination": "{current} of {total}"
   }
 }

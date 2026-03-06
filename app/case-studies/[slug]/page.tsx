@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { BackButton } from "@/components/back-button";
 import { CaseStudyLayout } from "@/components/case-study-layout";
 import { Container } from "@/components/container";
 import type { Locale } from "@/i18n/routing";
@@ -37,6 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function CaseStudyPage({ params }: Props) {
   const locale = (await getLocale()) as Locale;
+  const layoutT = await getTranslations("Layout");
   const { slug } = await params;
   const caseStudy = await getContentBySlug(locale, "case-studies", slug);
 
@@ -46,6 +48,7 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} fallbackHref="/case-studies" />
       <CaseStudyLayout
         company={caseStudy.frontmatter.company}
         title={caseStudy.frontmatter.title}

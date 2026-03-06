@@ -6,6 +6,7 @@ type ExperienceTimelineProps = {
   locale: string;
   labels: {
     location: string;
+    areas: string;
     progression: string;
     responsibilities: string;
     technologies: string;

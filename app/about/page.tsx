@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { FlagIcon, getFlagCode } from "@/components/flag-icon";
 import { ProfileAssetsCard } from "@/components/profile-assets-card";
@@ -18,11 +19,13 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const t = await getTranslations("AboutPage");
+  const layoutT = await getTranslations("Layout");
   const language1Flag = getFlagCode(t("language1Name"));
   const language2Flag = getFlagCode(t("language2Name"));
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} />
       <div className="max-w-3xl">
         <p className="font-mono text-sm text-brand">{t("eyebrow")}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{t("heading")}</h1>

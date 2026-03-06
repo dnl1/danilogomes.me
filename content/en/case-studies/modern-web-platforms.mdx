@@ -1,70 +1,75 @@
 ---
-title: "Modern Web Platforms"
-description: "Building modern full-stack product platforms with Next.js, TypeScript, Python APIs, and Vercel."
+title: "Orchid JMS"
+description: "Building a workflow-heavy journey management platform with Next.js, TypeScript and Vercel."
 date: "2025-09-08"
-tags: ["nextjs", "typescript", "python", "vercel"]
+tags: ["nextjs", "typescript", "vercel"]
 image: "/images/og-default.svg"
 company: "Orchid Software Solutions"
-technologies: ["Next.js", "TypeScript", "Python", "FastAPI", "Flask", "Vercel"]
+technologies: ["Next.js", "TypeScript", "Vercel", "Workflow systems"]
 featured: true
 ---
 
 ## Overview
 
-This work focused on building modern web platforms that combine a strong frontend developer experience with pragmatic,
-high-performance backend APIs. The goal was not simply to use modern tooling, but to build systems that were fast to
-iterate on, easy to deploy, and maintainable under real product pressure.
+This work focused on Orchid JMS, a journey management platform for surrogacy, egg donation, and sperm donation
+agencies. The product had to support the full lifecycle of third-party journeys, from first contact through birth and
+beyond, while remaining configurable enough for agencies with different processes and operating models.
 
 ## Problem
 
-Modern product platforms often fail in one of two ways:
+Agencies in this space often rely on email, spreadsheets, and chat-based coordination for intake, screening, matching,
+and case management. That creates predictable failure modes:
 
-- the frontend becomes polished but disconnected from stable backend contracts
-- the backend becomes functional but too heavy for product iteration speed
+- fragmented visibility across active journeys
+- manual coordination between teams
+- inconsistent process execution
+- difficulty adapting the system to agency-specific workflows
+- weak reporting on productivity, pipeline, and case progression
 
-The challenge was to build full-stack systems that balanced frontend quality, backend clarity, and deployment
-simplicity.
+The challenge was to build a product that felt operationally rigorous without becoming rigid.
 
 ## Architecture
 
-The architecture typically combined:
+The architecture combined:
 
-- Next.js for server-side rendering and static generation where appropriate
-- TypeScript for shared frontend correctness and maintainable application code
-- Python APIs built with FastAPI or Flask depending on service needs
-- Vercel for streamlined deployment and frontend delivery workflows
+- Next.js for the operational frontend and workflow-heavy internal views
+- TypeScript for maintainable UI logic and safer product iteration
+- Vercel for fast deployment, preview environments, and frontend delivery
+- configurable workflow and data modeling to support agency-specific intake, screening, matching, and case structures
 
-The systems were intentionally API-driven, allowing frontend and backend concerns to remain aligned without becoming
-tightly coupled.
+The system was intentionally API-driven, allowing workflow execution, case visibility, reporting, and custom data
+collection to evolve without tightly coupling the product to a single agency model.
 
 ## Technical Challenges
 
-- choosing where rendering should happen for product performance and maintainability
-- designing API boundaries that stayed productive for frontend teams
-- balancing delivery speed with architectural discipline
-- keeping deployment workflows simple without sacrificing system quality
+- modeling workflows that were configurable without becoming chaotic
+- supporting custom data fields and task-oriented processes across agencies
+- keeping case management usable while the domain remained operationally dense
+- building reporting surfaces that could extract meaningful metrics from day-to-day operations
+- balancing product flexibility with a maintainable architecture
 
 ## Solution
 
-The solution was a pragmatic full-stack model:
+The solution was a pragmatic full-stack operational platform:
 
-- use server-side rendering where dynamic responsiveness matters
-- use static generation where performance and content stability make it the better fit
-- build Python APIs with clear boundaries and lightweight service responsibilities
-- keep deployment and preview workflows simple enough to support rapid product iteration
+- centralize intake, screening, matching, and case management into one system
+- structure the product around task-oriented workflows that reduce mistakes and missing steps
+- support agency-specific customization through configurable data fields, forms, templates, and process flows
+- provide operational reporting that helps teams understand caseload, conversion, matching times, and revenue signals
 
-This approach prioritized product momentum without accepting architectural shortcuts that would age poorly.
+This approach let the product stay flexible for different agencies while preserving a cleaner engineering model behind
+the scenes.
 
 ## Technologies Used
 
 - Next.js
 - TypeScript
-- Python
-- FastAPI
-- Flask
 - Vercel
+- Workflow systems
+- Reporting and metrics
 
 ## Impact
 
-These platforms improved development velocity and product quality at the same time, showing that modern web systems can
-be both technically disciplined and fast-moving when the architecture stays focused on clear boundaries.
+Orchid JMS improved process visibility, reduced administrative overhead, and gave agencies a stronger operational system
+for managing journeys end to end. From an engineering perspective, it showed how configurable workflow software can be
+built without sacrificing clarity, maintainability, and delivery speed.

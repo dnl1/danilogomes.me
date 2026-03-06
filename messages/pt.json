@@ -17,7 +17,8 @@
     "label": "Selecionar idioma"
   },
   "Layout": {
-    "skipToContent": "Pular para o conteúdo"
+    "skipToContent": "Pular para o conteúdo",
+    "back": "Voltar"
   },
   "SocialLinks": {
     "professional": "Profissional",
@@ -40,7 +41,7 @@
   },
   "HomePage": {
     "eyebrow": "> portfolio.init()",
-    "title": "Engenheiro de Software e AI focado em sistemas financeiros e empresariais complexos.",
+    "title": "Engenheiro de Software e AI para sistemas financeiros e empresariais.",
     "description": "Projeto e construo backends distribuídos, plataformas orientadas a eventos, sistemas web modernos e produtos com IA, com foco em performance, confiabilidade e manutenção no longo prazo.",
     "viewProjects": "Ver experiência profissional",
     "listenToMusic": "Explorar música",
@@ -109,7 +110,7 @@
     "heading": "Projetos Pessoais",
     "intro": "Um conjunto de sistemas pessoais construídos como trabalho sério de engenharia, moldados por fluxos concretos, restrições de produto e necessidades operacionais reais.",
     "summaryTitle": "Sistemas Independentes",
-    "summaryDescription": "Construi esses projetos para resolver problemas reais com a mesma mentalidade que aplico em sistemas de produção: modelagem clara de domínio, tradeoffs técnicos, manutenção e usabilidade.",
+    "summaryDescription": "Esses são sistemas que estão em produção hoje, construídos para resolver problemas reais com foco em domínio, manutenção e usabilidade. Se houver interesse em qualquer um deles, entre em contato comigo.",
     "projectsTitle": "Sistemas Pessoais em Destaque"
   },
   "ExperiencePage": {
@@ -128,13 +129,14 @@
     "tag6": "Liderança técnica",
     "timelineTitle": "Timeline Profissional",
     "location": "Local",
+    "areas": "Área de Atuação",
     "progression": "Progressão de Carreira",
     "responsibilities": "Responsabilidades",
     "technologies": "Tecnologias",
     "impact": "Impacto",
     "present": "Atual",
     "profileTitle": "Perfil + CV",
-    "profileDescription": "A seção de experiência agora funciona como porta de entrada do portfólio profissional, com assets estáticos de perfil disponíveis diretamente no projeto.",
+    "profileDescription": "Aqui apresento minha trajetória profissional, principais responsabilidades e acesso ao meu CV.",
     "viewCv": "Abrir CV",
     "downloadCv": "Baixar CV",
     "photoAlt": "Retrato de Danilo Gomes"
@@ -191,6 +193,9 @@
     "screenshotsDescription": "As capturas vêm primeiro para que o produto possa ser entendido visualmente antes do detalhamento técnico.",
     "screenshotAlt": "Captura de tela de {title}",
     "openScreenshot": "Abrir captura de tela",
-    "closeScreenshot": "Fechar visualização da captura"
+    "closeScreenshot": "Fechar visualização da captura",
+    "previousScreenshot": "Captura anterior",
+    "nextScreenshot": "Próxima captura",
+    "screenshotPagination": "{current} de {total}"
   }
 }

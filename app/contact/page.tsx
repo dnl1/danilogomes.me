@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { buildMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/site";
@@ -17,9 +18,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function ContactPage() {
   const t = await getTranslations("ContactPage");
+  const layoutT = await getTranslations("Layout");
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} />
       <div className="max-w-2xl rounded-xl border border-line/80 bg-black/20 p-6 md:p-8">
         <p className="font-mono text-sm text-brand">{t("eyebrow")}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight">{t("heading")}</h1>

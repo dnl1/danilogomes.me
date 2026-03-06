@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import type { Locale } from "@/i18n/routing";
 import { getContentBySlug, getSlugs } from "@/lib/content";
@@ -40,6 +41,7 @@ export default async function ProjectPage({ params }: Props) {
   const locale = (await getLocale()) as Locale;
   const { slug } = await params;
   const t = await getTranslations("ProjectDetailPage");
+  const layoutT = await getTranslations("Layout");
   const project = await getContentBySlug(locale, "projects", slug);
 
   if (!project) {
@@ -48,6 +50,7 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} fallbackHref="/projects" />
       <article className="mx-auto max-w-3xl">
         <p className="font-mono text-sm text-brand">{formatDate(project.frontmatter.date, locale)}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{project.frontmatter.title}</h1>

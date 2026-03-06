@@ -25,7 +25,7 @@ export default async function HomePage() {
       <section className="grid gap-10 md:grid-cols-[minmax(0,1fr)_240px] md:items-center">
         <div className="max-w-3xl">
           <p className="mb-3 font-mono text-sm text-brand">{t("eyebrow")}</p>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">{t("title")}</h1>
+          <h1 className="text-3xl font-bold leading-tight tracking-tight md:text-5xl">{t("title")}</h1>
           <p className="mt-6 text-lg text-muted md:text-xl">{t("description")}</p>
 
           <div className="mt-8 flex flex-wrap gap-3">

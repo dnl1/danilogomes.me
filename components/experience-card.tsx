@@ -8,6 +8,7 @@ type ExperienceCardProps = {
   locale: string;
   labels: {
     location: string;
+    areas: string;
     progression: string;
     responsibilities: string;
     technologies: string;
@@ -35,12 +36,20 @@ export function ExperienceCard({ entry, locale, labels }: ExperienceCardProps) {
           <p className="font-mono text-xs text-brand">
             <span className="inline-flex items-center gap-2">
               {locationFlag ? <FlagIcon code={locationFlag} className="h-4 w-4" /> : null}
-              <span>
-                {entry.location}
-              </span>
+              <span>{entry.location}</span>
             </span>
           </p>
           <h2 className="mt-1 text-2xl font-semibold tracking-tight">{entry.company}</h2>
+          <div className="mt-3">
+            <p className="font-mono text-xs text-muted">{labels.areas}</p>
+            <div className="mt-2 flex flex-wrap gap-2">
+              {entry.areas.map((area) => (
+                <span key={area} className="rounded-md border border-line/80 px-3 py-2 font-mono text-xs">
+                  {area}
+                </span>
+              ))}
+            </div>
+          </div>
           <p className="mt-3 text-sm leading-7 text-muted">{entry.summary}</p>
         </div>
       </div>

@@ -10,6 +10,7 @@ type CompactProjectCardProps = {
   data: ProjectFrontmatter;
   locale: string;
   hrefPrefix?: "/projects" | "/personal-projects";
+  showDate?: boolean;
 };
 
 type DetailedProjectCardProps = {
@@ -59,7 +60,7 @@ export function ProjectCard(props: ProjectCardProps) {
     );
   }
 
-  const { slug, data, locale, hrefPrefix = "/projects" } = props;
+  const { slug, data, locale, hrefPrefix = "/projects", showDate = true } = props;
 
   return (
     <Link
@@ -75,7 +76,7 @@ export function ProjectCard(props: ProjectCardProps) {
           className="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
         />
       </div>
-      <p className="mb-2 mt-4 font-mono text-xs text-muted">{formatDate(data.date, locale)}</p>
+      {showDate ? <p className="mb-2 mt-4 font-mono text-xs text-muted">{formatDate(data.date, locale)}</p> : null}
       <h3 className="text-xl font-semibold tracking-tight group-hover:text-brand">{data.title}</h3>
       <p className="mt-3 text-sm text-muted">{data.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">

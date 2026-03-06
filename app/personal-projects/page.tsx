@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { ProjectCard } from "@/components/project-card";
 import type { Locale } from "@/i18n/routing";
@@ -19,10 +20,12 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function PersonalProjectsPage() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("PersonalProjectsPage");
+  const layoutT = await getTranslations("Layout");
   const projects = await getCollection(locale, "personal-projects");
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} />
       <header className="mb-10 max-w-4xl">
         <p className="font-mono text-sm text-brand">{t("eyebrow")}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{t("heading")}</h1>
@@ -46,6 +49,7 @@ export default async function PersonalProjectsPage() {
               data={project.frontmatter}
               locale={locale}
               hrefPrefix="/personal-projects"
+              showDate={false}
             />
           ))}
         </div>

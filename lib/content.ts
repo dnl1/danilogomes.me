@@ -42,6 +42,7 @@ export type ExperienceRole = {
 export type ExperienceFrontmatter = BaseFrontmatter & {
   company: string;
   location: string;
+  areas: string[];
   logo: string;
   logoBackground?: "dark" | "light";
   summary?: string;

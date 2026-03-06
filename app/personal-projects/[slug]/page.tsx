@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { ProjectGallery } from "@/components/project-gallery";
 import type { Locale } from "@/i18n/routing";
 import { getContentBySlug, getSlugs } from "@/lib/content";
 import { absoluteUrl } from "@/lib/metadata";
-import { formatDate } from "@/lib/utils";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -39,6 +39,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PersonalProjectPage({ params }: Props) {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("ProjectDetailPage");
+  const layoutT = await getTranslations("Layout");
   const { slug } = await params;
   const project = await getContentBySlug(locale, "personal-projects", slug);
 
@@ -48,6 +49,7 @@ export default async function PersonalProjectPage({ params }: Props) {
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} fallbackHref="/personal-projects" />
       <article className="mx-auto max-w-4xl">
         <ProjectGallery
           title={t("screenshots")}
@@ -56,9 +58,11 @@ export default async function PersonalProjectPage({ params }: Props) {
           images={project.frontmatter.screenshots ?? []}
           openLabel={t("openScreenshot")}
           closeLabel={t("closeScreenshot")}
+          previousLabel={t("previousScreenshot")}
+          nextLabel={t("nextScreenshot")}
+          paginationLabel={t("screenshotPagination")}
         />
 
-        <p className="font-mono text-sm text-brand">{formatDate(project.frontmatter.date, locale)}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{project.frontmatter.title}</h1>
         <p className="mt-4 max-w-3xl text-lg text-muted">{project.frontmatter.description}</p>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { ExperienceTimeline } from "@/components/experience-timeline";
 import { ProfileAssetsCard } from "@/components/profile-assets-card";
@@ -21,10 +22,12 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ExperiencePage() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("ExperiencePage");
+  const layoutT = await getTranslations("Layout");
   const entries = await getCollection(locale, "experience");
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} />
       <header className="mb-10 max-w-4xl">
         <p className="font-mono text-sm text-brand">{t("eyebrow")}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{t("heading")}</h1>
@@ -62,6 +65,7 @@ export default async function ExperiencePage() {
           locale={locale}
           labels={{
             location: t("location"),
+            areas: t("areas"),
             progression: t("progression"),
             responsibilities: t("responsibilities"),
             technologies: t("technologies"),

@@ -1,66 +1,74 @@
 ---
-title: "Plataformas Web Modernas"
-description: "Construcao de plataformas full stack modernas com Next.js, TypeScript, APIs Python e Vercel."
+title: "Orchid JMS"
+description: "Construção de uma plataforma de journey management orientada a workflows com Next.js, TypeScript e Vercel."
 date: "2025-09-08"
-tags: ["nextjs", "typescript", "python", "vercel"]
+tags: ["nextjs", "typescript", "vercel"]
 image: "/images/og-default.svg"
 company: "Orchid Software Solutions"
-technologies: ["Next.js", "TypeScript", "Python", "FastAPI", "Flask", "Vercel"]
+technologies: ["Next.js", "TypeScript", "FastAPI", "Flask", "Vercel", "Workflow systems"]
 featured: true
 ---
 
 ## Overview
 
-Esse trabalho teve foco na construcao de plataformas web modernas que combinam uma forte experiência de desenvolvimento
-frontend com APIs backend pragmáticas e de alta performance. A meta não era apenas usar tooling moderno, mas construir
-sistemas rapidos de iterar, fáceis de publicar e sustentaveis sob pressao real de produto.
+Esse trabalho teve foco no Orchid JMS, uma plataforma de gestão de jornadas para agências de barriga de aluguel,
+doação de óvulos e doação de sêmen. O produto precisava suportar o ciclo completo dessas jornadas, do primeiro contato
+até o nascimento e além, mantendo flexibilidade suficiente para agências com processos e modelos operacionais
+diferentes.
 
 ## Problem
 
-Plataformas modernas costumam falhar de dois jeitos:
+Agências nesse espaço costumam depender de email, planilhas e coordenação por chat para intake, screening, matching e
+case management. Isso gera falhas previsíveis:
 
-- frontend bom, mas desconectado de contratos backend estaveis
-- backend funcional, mas pesado demais para a velocidade de iteração do produto
+- visibilidade fragmentada sobre jornadas ativas
+- coordenação manual entre times
+- execução inconsistente dos processos
+- dificuldade para adaptar o sistema aos fluxos específicos de cada agência
+- pouca capacidade de reporting sobre produtividade, pipeline e progresso dos casos
 
-O desafio era equilibrar qualidade de frontend, clareza de backend e simplicidade de deploy.
+O desafio era construir um produto operacionalmente rigoroso sem torná-lo rígido.
 
 ## Architecture
 
-A arquitetura tipicamente combinou:
+A arquitetura combinou:
 
-- Next.js para server-side rendering e geracao estática quando aprópriado
-- TypeScript para corretude e manutenção no frontend
-- APIs Python com FastAPI ou Flask conforme a necessidade do serviço
-- Vercel para deploy simplificado e fluxo de entrega frontend
+- Next.js para o frontend operacional e telas internas orientadas a workflow
+- TypeScript para manter a lógica de UI mais segura e sustentável
+- APIs Python com FastAPI ou Flask conforme o limite de cada serviço
+- Vercel para deploy rápido, ambientes de preview e entrega do frontend
+- modelagem configurável de workflows e dados para suportar intake, screening, matching e estruturas de caso específicas por agência
 
-Os sistemas foram guiados por API, preservando alinhamento entre frontend e backend sem acoplamento excessivo.
+O sistema foi guiado por APIs, permitindo evoluir execução de workflow, visibilidade de casos, reporting e coleta de
+dados customizados sem acoplar o produto a um único modelo de agência.
 
 ## Technical Challenges
 
-- decidir ondé o rendering deveria acontecer para melhor performance e manutenção
-- desenhar limites de API produtivos para o frontend
-- equilibrar velocidade de entrega com disciplina arquitetural
-- simplificar deploy sem sacrificar qualidade de sistema
+- modelar workflows configuráveis sem transformar o produto em algo caótico
+- suportar campos customizados e processos orientados a tarefas entre diferentes agências
+- manter a usabilidade de case management em um domínio operacionalmente denso
+- construir superfícies de reporting capazes de extrair métricas relevantes da operação diária
+- equilibrar flexibilidade de produto com uma arquitetura sustentável
 
 ## Solution
 
-A solucao foi um modelo full stack pragmatico:
+A solução foi uma plataforma operacional full stack pragmática:
 
-- SSR quando a responsividade dinamica era importante
-- geracao estática quando performance e estabilidade favoreciam esse caminho
-- APIs Python com limites claros e responsabilidades leves
-- fluxo de deploy e preview simples o suficiente para iteração rápida
+- centralizar intake, screening, matching e case management em um único sistema
+- estruturar o produto em torno de workflows orientados a tarefas para reduzir erros e etapas perdidas
+- suportar customização por agência com campos, formulários, templates e fluxos configuráveis
+- oferecer reporting operacional para entender caseload, conversão, tempos de matching e sinais de receita
 
 ## Technologies Used
 
 - Next.js
 - TypeScript
-- Python
-- FastAPI
-- Flask
 - Vercel
+- Workflow systems
+- Reporting e métricas
 
 ## Impact
 
-Essas plataformas melhoraram velocidade de desenvolvimento e qualidade de produto ao mesmo tempo, mostrando que sistemas
-web modernos podem ser disciplinados técnicamente sem perder agilidade.
+O Orchid JMS melhorou visibilidade de processo, reduziu esforço administrativo e deu às agências uma base operacional
+mais forte para gerenciar jornadas ponta a ponta. Do ponto de vista de engenharia, mostrou como software configurável
+orientado a workflow pode ser construído sem perder clareza, manutenção e velocidade de entrega.

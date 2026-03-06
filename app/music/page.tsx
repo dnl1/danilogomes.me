@@ -5,6 +5,7 @@ import { FaAmazon } from "react-icons/fa6";
 import type { IconBaseProps } from "react-icons";
 import { SiInstagram, SiSoundcloud, SiSpotify, SiTidal, SiYoutubemusic } from "react-icons/si";
 import { siDeezer } from "simple-icons";
+import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { FollowPlatforms, type FollowPlatformItem } from "@/components/follow-platforms";
 import { MusicPlatforms, type MusicPlatformItem } from "@/components/music-platforms";
@@ -34,6 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function MusicPage() {
   const t = await getTranslations("MusicPage");
+  const layoutT = await getTranslations("Layout");
   const [dnl1Releases, undercolinReleases] = await Promise.all([
     getLatestSpotifyReleasesByArtist("dnl1").catch(() => []),
     getLatestSpotifyReleasesByArtist("undercolin").catch(() => [])
@@ -100,6 +102,7 @@ export default async function MusicPage() {
 
   return (
     <Container className="py-16 md:py-24">
+      <BackButton label={layoutT("back")} />
       <header className="mb-10 max-w-3xl">
         <p className="font-mono text-sm text-brand">{t("eyebrow")}</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{t("heading")}</h1>

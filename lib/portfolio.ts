@@ -265,16 +265,16 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
         "Improved throughput and maintainability in large-scale healthcare financial processing while reducing delivery risk."
     },
     {
-      title: "Modern Web Platforms with Next.js and Vercel",
+      title: "Orchid JMS",
       description:
-        "Developer-focused product platforms built with modern frontend tooling and API-driven backend services.",
-      technologies: ["TypeScript", "React", "Next.js", "Vercel", "FastAPI", "Flask"],
+        "Journey management software for surrogacy, egg donation, and sperm donation agencies, built as a workflow-heavy operational platform.",
+      technologies: ["TypeScript", "Next.js", "Vercel"],
       problem:
-        "Teams needed modern web platforms that balanced frontend performance, developer velocity, and clean backend integration.",
+        "Agencies handling third-party reproductive journeys needed a secure system to manage intake, screening, matching, case management, custom workflows, and operational reporting without relying on fragmented manual processes.",
       approach:
-        "Built full-stack systems around server-side rendering, static generation, Python APIs, and lightweight deployment workflows on Vercel.",
+        "Built a full-stack operational platform around TypeScript, Next.js, and configurable workflow structures, supporting custom data fields, task-oriented process control, reporting, and end-to-end case visibility.",
       impact:
-        "Delivered maintainable product platforms with a strong balance between user experience, developer ergonomics, and operational simplicity."
+        "Improved operational control across complex agency workflows, reduced manual coordination, and created a more scalable system for intake, screening, matching, and case management."
     }
   ],
   pt: [
@@ -327,16 +327,16 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
         "Melhorei throughput e manutenção em fluxos financeiros de saúde de larga escala, reduzindo risco de entrega."
     },
     {
-      title: "Modern Web Platforms with Next.js and Vercel",
+      title: "Orchid JMS",
       description:
-        "Plataformas de produto orientadas a desenvolvedor, construidas com frontend moderno e serviços backend guiados por APIs.",
-      technologies: ["TypeScript", "React", "Next.js", "Vercel", "FastAPI", "Flask"],
+        "Journey management software para agências de barriga de aluguel, doação de óvulos e doação de sêmen, construído como uma plataforma operacional orientada a workflows.",
+      technologies: ["TypeScript", "Next.js", "Vercel"],
       problem:
-        "Os times precisavam de plataformas web modernas que equilibrassem performance de frontend, velocidade de desenvolvimento e integração limpa com o backend.",
+        "Agências que operam jornadas reprodutivas de terceiros precisavam de um sistema seguro para intake, screening, matching, case management, workflows customizados e reporting operacional, sem depender de processos manuais fragmentados.",
       approach:
-        "Construí sistemas full stack combinando server-side rendering, static generation, APIs em Python e workflows leves de deploy na Vercel.",
+        "Construí uma plataforma full stack em Next.js e estruturas configuráveis de workflow, suportando campos customizados, controle orientado a tarefas, reporting e visibilidade ponta a ponta dos casos.",
       impact:
-        "Entreguei plataformas mais fáceis de manter, com bom equilibrio entre experiência do usuário, ergonomia de desenvolvimento e simplicidadé operacional."
+        "Melhorei o controle operacional de fluxos complexos da agência, reduzi coordenação manual e criei uma base mais escalável para intake, screening, matching e case management."
     }
   ]
 };
