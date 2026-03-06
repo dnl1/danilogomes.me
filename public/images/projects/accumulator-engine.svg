@@ -1,0 +1,10 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#0E1118" />
+  <rect x="50" y="50" width="1100" height="600" rx="18" fill="#141C28" stroke="#2D313A" />
+  <text x="100" y="170" fill="#5EEAD4" font-size="24" font-family="monospace">project://accumulator-engine</text>
+  <text x="100" y="250" fill="#E8EAED" font-size="48" font-family="sans-serif">Data Pipeline Console</text>
+  <rect x="100" y="300" width="1000" height="240" rx="12" fill="#0C121B" stroke="#2D313A" />
+  <text x="140" y="380" fill="#9099A8" font-size="24" font-family="monospace">queue_depth: 128</text>
+  <text x="140" y="430" fill="#9099A8" font-size="24" font-family="monospace">p95_latency_ms: 181</text>
+  <text x="140" y="480" fill="#9099A8" font-size="24" font-family="monospace">throughput_events_s: 7240</text>
+</svg>

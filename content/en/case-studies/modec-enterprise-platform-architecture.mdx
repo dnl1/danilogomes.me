@@ -1,0 +1,71 @@
+---
+title: "MODEC Enterprise Platform Architecture"
+description: "Designing microservices and microfrontends for a large enterprise platform spanning performance, projects, and operational visibility."
+date: "2025-10-05"
+tags: ["microservices", "microfrontends", "enterprise", "modec"]
+image: "/images/og-default.svg"
+company: "Shape"
+technologies: ["C#", ".NET", "Microservices", "Microfrontends", "Enterprise architecture"]
+featured: true
+---
+
+## Overview
+
+This platform supported multiple enterprise domains for MODEC, including performance management, project management,
+and digital operational visibility. The challenge was not just building features. It was designing an architecture that
+allowed distinct modules to evolve independently while still working as one enterprise product.
+
+## Problem
+
+The system had to serve multiple domains with different operational needs:
+
+- Performance Management
+- Project Management
+- Digital Control Tower
+
+The Digital Control Tower was especially complex because it handled the EPCI lifecycle of offshore platforms and needed
+to connect project and operational views in a meaningful way.
+
+## Architecture
+
+The architectural direction centered on decomposition:
+
+- microservices were used to separate backend capabilities by domain and ownership boundaries
+- microfrontends enabled teams to evolve major modules with less coupling in the UI layer
+- domain-driven module ownership made it easier to isolate business logic and release changes incrementally
+- shared integration layers kept cross-module visibility possible without rebuilding the system as a single unit
+
+This was less about trendy architecture and more about giving a large enterprise system room to scale without
+collapsing into central coordination bottlenecks.
+
+## Technical Challenges
+
+- separating modules without breaking enterprise-level workflows
+- integrating operational and project data for offshore lifecycle visibility
+- coordinating architectural decisions across internal teams, MODEC stakeholders, and consultancies
+- keeping the system understandable while increasing its modularity
+
+## Solution
+
+The platform was evolved with explicit module ownership:
+
+- Performance module
+- Projects module
+- Digital Control Tower
+
+The Digital Control Tower required careful data integration design because the EPCI lifecycle crosses planning,
+execution, and operational visibility concerns. The solution was to define backend and frontend boundaries that mapped
+to business capabilities while preserving the ability to compose information across modules.
+
+## Technologies Used
+
+- C#
+- .NET
+- Microservices
+- Microfrontends
+- Enterprise platform integration patterns
+
+## Impact
+
+The platform became more scalable organizationally and technically. Teams could move faster within clearer module
+boundaries, while the enterprise product remained coherent enough to support MODEC's complex operational environment.

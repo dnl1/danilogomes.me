@@ -1,0 +1,68 @@
+---
+title: "Arquitetura da Plataforma Enterprise da MODEC"
+description: "Desenho de microservicos e microfrontends para uma plataforma enterprise com performance, projetos e visibilidade operacional."
+date: "2025-10-05"
+tags: ["microservices", "microfrontends", "enterprise", "modec"]
+image: "/images/og-default.svg"
+company: "Shape"
+technologies: ["C#", ".NET", "Microservices", "Microfrontends", "Enterprise architecture"]
+featured: true
+---
+
+## Overview
+
+Essa plataforma suportava multiplos dominios enterprise para a MODEC, incluindo gestao de performance, gestao de
+projetos e visibilidade operacional digital. O desafio nao era apenas construir funcionalidades, mas desenhar uma
+arquitetura que permitisse evolucao independente entre modulos.
+
+## Problem
+
+O sistema precisava servir dominios diferentes:
+
+- Performance Management
+- Project Management
+- Digital Control Tower
+
+O Digital Control Tower era especialmente complexo porque tratava o ciclo EPCI de plataformas offshore e precisava
+integrar visoes operacionais e de projeto.
+
+## Architecture
+
+A direcao arquitetural foi baseada em decomposicao:
+
+- microservicos para separar capacidades backend por dominio
+- microfrontends para permitir evolucao menos acoplada na camada de interface
+- ownership de modulo mapeado para capacidades de negocio
+- integracoes compartilhadas para manter visibilidade entre modulos sem voltar a um sistema unico
+
+## Technical Challenges
+
+- separar modulos sem quebrar workflows enterprise
+- integrar dados operacionais e de projeto para visibilidade de ciclo offshore
+- coordenar decisoes de arquitetura com times internos, stakeholders da MODEC e consultorias
+- manter o sistema compreensivel enquanto a modularidade aumentava
+
+## Solution
+
+A plataforma foi evoluida com ownership explicito dos modulos:
+
+- Performance module
+- Projects module
+- Digital Control Tower
+
+O Digital Control Tower exigiu desenho cuidadoso de integracao de dados porque o ciclo EPCI cruza planejamento,
+execucao e visibilidade operacional. A solucao foi definir limites backend e frontend alinhados a capacidades de
+negocio, preservando a composicao de informacoes entre modulos.
+
+## Technologies Used
+
+- C#
+- .NET
+- Microservices
+- Microfrontends
+- Padroes de integracao enterprise
+
+## Impact
+
+A plataforma ficou mais escalavel do ponto de vista tecnico e organizacional. Os times passaram a operar com mais
+autonomia dentro de limites mais claros, sem perder coerencia de produto enterprise.

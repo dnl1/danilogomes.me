@@ -1,0 +1,26 @@
+---
+title: "Loader Performance"
+description: "Estrategia de carregamento web melhorada com cache na edge e otimizacao estatica."
+date: "2025-05-19"
+tags: ["frontend", "nextjs", "performance"]
+image: "/images/projects/loader-performance.svg"
+featured: true
+company: "Northwind Labs"
+techStack: ["Next.js", "TypeScript", "Vercel", "TailwindCSS"]
+screenshots: ["/images/projects/loader-performance.svg"]
+---
+
+## Descricao do problema
+
+O produto tinha pontuacoes ruins no Lighthouse mobile e alta taxa de rejeicao em redes lentas.
+
+## Arquitetura
+
+Movi blocos dinamicos para geracao estatica com hidratacao seletiva, separei modulos pesados e adicionei cache
+imutavel na edge para assets de midia.
+
+## Impacto
+
+- Largest Contentful Paint reduzido de 3.8s para 1.7s
+- Taxa de rejeicao caiu 19%
+- O output de build ficou majoritariamente estatico e mais barato de hospedar

@@ -1,0 +1,29 @@
+---
+title: "Building Content-Driven Portfolios with Next.js and MDX"
+description: "How to keep a personal site fast, maintainable, and easy to publish."
+date: "2025-10-03"
+tags: ["nextjs", "mdx", "architecture"]
+image: "/images/blog/first-post.svg"
+---
+
+A content-driven portfolio should optimize for two things:
+
+1. Publishing speed
+2. Long-term maintainability
+
+With **App Router + MDX**, you can keep content close to code without introducing a full CMS before you need one.
+
+## Why this structure works
+
+- Static generation keeps hosting cost low
+- MDX enables rich content and code snippets
+- Route-based metadata helps SEO and social sharing
+
+```tsx
+export async function generateStaticParams() {
+  const slugs = await getSlugs("en", "blog");
+  return slugs.map((slug) => ({ slug }));
+}
+```
+
+When your content volume grows, you can migrate to a headless CMS while preserving route and rendering logic.

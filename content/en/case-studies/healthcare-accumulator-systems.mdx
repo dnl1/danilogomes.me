@@ -1,0 +1,70 @@
+---
+title: "Healthcare Accumulator Systems"
+description: "Modernizing accumulator and claim-adjustment infrastructure in a large healthcare financial platform."
+date: "2025-09-22"
+tags: ["healthcare", "accumulators", "batch-processing", "sql"]
+image: "/images/og-default.svg"
+company: "RxSense"
+technologies: ["C#", "SQL Server", "Batch processing", "Ledger systems", "Large datasets"]
+featured: true
+---
+
+## Overview
+
+Healthcare financial systems carry heavy correctness requirements because balances, claim adjustments, and ledger-like
+state affect downstream financial behavior. This work focused on accumulator systems, loaders, claim adjustments, and
+processing flows where correctness and performance had to coexist.
+
+## Problem
+
+Accumulator systems were responsible for tracking balances that could exist at both individual and family levels while
+interacting with claim adjustment logic and other financial processes. The environment also had to deal with:
+
+- large datasets
+- expensive batch processing
+- strict data integrity constraints
+- performance bottlenecks in data movement and SQL execution
+
+## Architecture
+
+The relevant system areas included:
+
+- accumulator balance logic
+- healthcare claim adjustment workflows
+- ledger-oriented processing boundaries
+- data loaders and batch pipelines
+
+The architecture challenge was less about greenfield design and more about targeted modernization inside a large,
+already critical platform.
+
+## Technical Challenges
+
+- preserving integrity of financial balances across large data volumes
+- handling family and individual accumulator rules without introducing subtle inconsistencies
+- improving loader and batch performance without destabilizing core system behavior
+- finding modernization opportunities inside a mature monolithic environment
+
+## Solution
+
+The solution emphasized focused, low-risk improvements:
+
+- optimize SQL paths where data access patterns were the main performance bottleneck
+- refine batch pipelines to improve throughput and reduce operational drag
+- improve processing behavior around loaders and financial adjustment workflows
+- modernize selectively rather than attempting high-risk rewrites
+
+This approach respected the reality that high-value healthcare financial systems cannot be treated like disposable
+application code.
+
+## Technologies Used
+
+- C#
+- SQL Server
+- Batch processing pipelines
+- Data loaders
+- Large dataset processing
+
+## Impact
+
+The result was a healthier technical foundation for accumulator and adjustment workflows: better performance, clearer
+modernization paths, and stronger confidence in data-sensitive financial behavior at scale.

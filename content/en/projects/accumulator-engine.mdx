@@ -1,0 +1,35 @@
+---
+title: "Accumulator Engine"
+description: "Designed a high-throughput data processing pipeline for near-real-time analytics."
+date: "2025-08-12"
+tags: ["backend", "performance", "distributed-systems"]
+image: "/images/projects/accumulator-engine.svg"
+featured: true
+company: "Orbit Metrics"
+techStack: ["TypeScript", "Node.js", "PostgreSQL", "Kafka", "Redis"]
+screenshots:
+  ["/images/projects/accumulator-engine.svg", "/images/projects/loader-performance.svg"]
+---
+
+## Problem description
+
+The ingestion service had unstable latency during peak traffic and no clear way to recover from retries.
+
+## Architecture
+
+I redesigned the ingestion layer into a queue-driven architecture with idempotent processors and checkpointing.
+The model reduced duplicated jobs and made replay operations predictable.
+
+## Impact
+
+- 67% reduction in p95 ingestion latency
+- 40% lower infrastructure cost in the data pipeline
+- Zero production incidents related to duplicate event processing for 4 months
+
+```ts
+export async function processBatch(events: EventPayload[]) {
+  for (const event of events) {
+    await upsertAggregate(event.userId, event.metric, event.value);
+  }
+}
+```

@@ -1,0 +1,67 @@
+---
+title: "Trading Infrastructure Platform"
+description: "Building infrastructure foundations for a brokerage trading environment with low-latency messaging and protocol-heavy integrations."
+date: "2025-11-01"
+tags: ["fix", "rabbitmq", "grpc", "rpc", "brokerage"]
+image: "/images/og-default.svg"
+company: "XP Inc / Clear Corretora"
+technologies: ["FIX", "RabbitMQ", "gRPC", "RPC", "Financial systems"]
+featured: true
+---
+
+## Overview
+
+This work focused on the foundation of trading platform infrastructure in a brokerage environment where reliability,
+latency, and protocol correctness directly affect business operations. The system needed to support trading workflows,
+market connectivity, and internal service coordination without introducing instability into critical order flows.
+
+## Problem
+
+Brokerage systems are difficult because they sit at the intersection of market protocol requirements, internal business
+rules, and operational resilience. The platform needed to coordinate multiple internal services while maintaining low
+latency, predictable messaging behavior, and safe failure handling under financial workloads.
+
+## Architecture
+
+The platform relied on a protocol-aware, message-driven architecture:
+
+- FIX was used for trading-oriented interactions where protocol semantics and message sequencing mattered.
+- RabbitMQ supported asynchronous communication between internal services and workflow boundaries.
+- gRPC and RPC were used for lower-latency synchronous communication paths where direct service contracts were needed.
+- Proprietary low-level libraries handled specialized integration points close to the trading core.
+
+This architecture separated transport concerns by use case instead of forcing all workloads into a single integration
+model.
+
+## Technical Challenges
+
+- Balancing low-latency communication with operational reliability in a financial environment
+- Handling message ordering, retries, and protocol expectations without compromising trading behavior
+- Integrating synchronous and asynchronous patterns across services with different latency and consistency needs
+- Operating close to low-level libraries where abstraction layers were intentionally thin
+
+## Solution
+
+The engineering approach emphasized clear communication boundaries:
+
+- Use message queues where decoupling and resilience mattered more than immediate response times
+- Use direct RPC-style communication where low overhead and contract clarity were required
+- Keep protocol-sensitive trading flows close to dedicated integration layers instead of over-generalizing them
+- Design around failure handling, observability, and operational predictability from the start
+
+Rather than treating messaging as a generic infrastructure concern, the platform used protocol and transport choices as
+part of the system design itself.
+
+## Technologies Used
+
+- FIX protocol
+- RabbitMQ
+- gRPC
+- RPC
+- Proprietary low-level integration libraries
+
+## Impact
+
+This work helped create the infrastructure foundation for a trading platform where communication patterns, reliability,
+and protocol correctness were part of the product itself. The result was a system shape better aligned with brokerage
+operations and the realities of financial messaging workloads.

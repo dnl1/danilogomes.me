@@ -1,0 +1,155 @@
+{
+  "Metadata": {
+    "siteTitle": "Danilo Gomes | Engenheiro de Software",
+    "siteDescription": "Engenheiro de software com mais de 10 anos de experiencia projetando sistemas financeiros, de saude e plataformas empresariais complexas."
+  },
+  "Navbar": {
+    "about": "Sobre",
+    "experience": "Experiencia",
+    "projects": "Projetos",
+    "caseStudies": "Case Studies",
+    "music": "Musica",
+    "blog": "Blog",
+    "contact": "Contato"
+  },
+  "LanguageSelector": {
+    "label": "Selecionar idioma"
+  },
+  "Layout": {
+    "skipToContent": "Pular para o conteudo"
+  },
+  "SocialLinks": {
+    "professional": "Profissional",
+    "music": "Musica",
+    "band": "Banda - Undercolin",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "spotifyPersonal": "Spotify (dnl1)",
+    "soundcloud": "SoundCloud",
+    "instagramPersonal": "Instagram (dnl1)",
+    "spotifyBand": "Spotify (Undercolin)",
+    "instagramBand": "Instagram (Undercolin)",
+    "websiteBand": "Site (Undercolin)"
+  },
+  "Footer": {
+    "builtWith": "Feito com Next.js + MDX. © {year} {name}",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "spotify": "Spotify"
+  },
+  "HomePage": {
+    "eyebrow": "> portfolio.init()",
+    "title": "Engenheiro de software focado em sistemas financeiros e empresariais complexos.",
+    "description": "Projeto e construo backends distribuidos, plataformas orientadas a eventos e sistemas web modernos com foco em performance, confiabilidade e manutencao no longo prazo.",
+    "viewProjects": "Ver experiencia",
+    "listenToMusic": "Explorar musica",
+    "profileTitle": "Perfil + CV",
+    "profileDescription": "Os assets publicos agora ficam organizados em /public para acesso direto. O CV ja esta disponivel aqui, e o slot da foto esta preparado em public/images/profile/.",
+    "viewCv": "Abrir CV",
+    "downloadCv": "Baixar CV",
+    "photoAlt": "Retrato de Danilo Gomes",
+    "engineering": "Infraestrutura fintech, sistemas financeiros para saude, plataformas empresariais e APIs modernas.",
+    "music": "Sistemas distribuidos, microservicos, processamento orientado a eventos e lideranca tecnica.",
+    "featuredProjects": "// projetos_em_destaque",
+    "featuredMusic": "// musicas_em_destaque",
+    "latestBlog": "// blog_recente",
+    "seeAll": "Ver tudo"
+  },
+  "AboutPage": {
+    "title": "Sobre",
+    "description": "Background em engenharia, foco tecnico e experiencia em lideranca.",
+    "eyebrow": "$ whoami",
+    "heading": "Danilo Gomes",
+    "profileTitle": "Assets Estaticos",
+    "profileDescription": "O portfolio agora suporta midia de perfil dentro de /public, incluindo um caminho dedicado para o CV e um caminho reservado para a foto de perfil.",
+    "viewCv": "Abrir CV",
+    "downloadCv": "Baixar CV",
+    "photoAlt": "Retrato de Danilo Gomes",
+    "paragraph1": "Sou engenheiro de software com mais de 10 anos de experiencia projetando e construindo sistemas financeiros e empresariais complexos. Minha atuacao inclui infraestrutura fintech, sistemas financeiros para o setor de saude, plataformas empresariais, arquiteturas distribuidas e processamento de dados de alta performance.",
+    "paragraph2": "Ao longo dessa trajetoria, construi servicos backend, plataformas web modernas e APIs usando tecnologias como C#, .NET, Python, FastAPI, Flask, TypeScript, React e Next.js. Tambem trabalhei extensivamente com padroes de mensageria e infraestrutura como RabbitMQ, gRPC, RPC e arquiteturas orientadas a eventos.",
+    "valuesHeading": "Principais especialidades",
+    "value1": "Sistemas distribuidos, arquitetura de microservicos e sistemas orientados a eventos",
+    "value2": "Servicos backend de alta performance, modernizacao de sistemas e processamento de grandes volumes de dados",
+    "value3": "Lideranca tecnica em iniciativas de backend, plataforma e full stack"
+  },
+  "ContactPage": {
+    "title": "Contato",
+    "description": "Entre em contato para oportunidades em engenharia de software, plataforma e arquitetura.",
+    "eyebrow": "send_message()",
+    "heading": "Contato",
+    "intro": "Estou disponivel para oportunidades seniores em engenharia de software, plataformas backend, sistemas distribuidos e lideranca tecnica.",
+    "email": "Email",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "spotify": "Spotify"
+  },
+  "ProjectsPage": {
+    "title": "Projetos",
+    "description": "Trabalho de engenharia selecionado com foco em arquitetura, abordagem tecnica e impacto.",
+    "eyebrow": "ls ./projects",
+    "heading": "Projetos de Engenharia",
+    "intro": "Uma selecao de sistemas e plataformas que mostram como Danilo aborda arquitetura, modernizacao, entrega e engenharia em dominios criticos.",
+    "summaryTitle": "Portfolio de Projetos",
+    "summaryDescription": "Esses projetos destacam profundidade tecnica em vez de bullets de curriculo: o problema, a abordagem arquitetural, as tecnologias utilizadas e o impacto de engenharia.",
+    "projectsTitle": "Trabalho de Engenharia Selecionado",
+    "problem": "Problema",
+    "approach": "Abordagem",
+    "impact": "Impacto"
+  },
+  "ExperiencePage": {
+    "title": "Experiencia",
+    "description": "Experiencia em engenharia entre fintech, plataformas empresariais, sistemas financeiros de saude e arquitetura web moderna.",
+    "eyebrow": "cat ./experience.log",
+    "heading": "Experiencia em Engenharia",
+    "intro": "Uma timeline de sistemas construidos, decisoes de arquitetura, times liderados e plataformas criticas moldadas ao longo de mais de 10 anos em engenharia de software.",
+    "summaryTitle": "Escopo de Engenharia",
+    "summaryDescription": "Danilo Gomes atua entre engenharia backend, sistemas distribuidos, modernizacao de plataforma e lideranca tecnica. O foco aqui e arquitetura, ownership e impacto tecnico.",
+    "tag1": "Sistemas distribuidos",
+    "tag2": "Microservicos",
+    "tag3": "Sistemas orientados a eventos",
+    "tag4": "Backends de alta performance",
+    "tag5": "Plataformas web modernas",
+    "tag6": "Lideranca tecnica",
+    "timelineTitle": "Timeline Profissional",
+    "responsibilities": "Responsabilidades",
+    "technologies": "Tecnologias",
+    "impact": "Impacto",
+    "profileTitle": "Perfil + CV",
+    "profileDescription": "A secao de experiencia agora funciona como porta de entrada do portfolio profissional, com assets estaticos de perfil disponiveis diretamente no projeto.",
+    "viewCv": "Abrir CV",
+    "downloadCv": "Baixar CV",
+    "photoAlt": "Retrato de Danilo Gomes"
+  },
+  "CaseStudiesPage": {
+    "title": "Case Studies de Engenharia",
+    "description": "Estudos tecnicos aprofundados com foco em decisoes de arquitetura, restricoes reais e impacto de engenharia.",
+    "eyebrow": "find ./case-studies -maxdepth 1",
+    "heading": "Case Studies de Engenharia",
+    "intro": "Uma colecao de estudos tecnicos cobrindo sistemas financeiros, arquitetura enterprise, infraestrutura de saude e plataformas modernas de produto.",
+    "summaryTitle": "Profundidade Tecnica",
+    "summaryDescription": "Esses case studies sao escritos como narrativas de engenharia: o que tornava o sistema dificil, como a arquitetura foi moldada, onde estavam os riscos e qual impacto tecnico veio das decisoes."
+  },
+  "MusicPage": {
+    "title": "Musica",
+    "description": "Projetos musicais e trabalho de producao paralelamente a engenharia de software.",
+    "eyebrow": "play --all",
+    "heading": "Projetos Musicais",
+    "intro": "Um fluxo criativo paralelo: lancamentos, experimentos e notas de producao.",
+    "latestSpotify": "Ultimos Lancamentos no Spotify",
+    "latestSpotifyDescription": "Lancamentos atuais buscados da pagina publica do artista no Spotify.",
+    "latestSpotifyFallback": "Os lancamentos do Spotify estao temporariamente indisponiveis, entao o catalogo local aparece abaixo."
+  },
+  "BlogPage": {
+    "title": "Blog",
+    "description": "Notas sobre engenharia, arquitetura de sistemas e fluxos de trabalho de produto.",
+    "eyebrow": "cat ./notes/*.mdx",
+    "heading": "Blog",
+    "intro": "Reflexoes sobre software, arquitetura e engenharia de produto."
+  },
+  "ProjectDetailPage": {
+    "company": "Empresa",
+    "techStack": "Stack",
+    "screenshots": "Capturas de tela",
+    "screenshotAlt": "Captura de tela de {title}"
+  }
+}

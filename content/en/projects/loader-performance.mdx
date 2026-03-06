@@ -1,0 +1,26 @@
+---
+title: "Loader Performance"
+description: "Improved web app loading strategy with edge caching and static optimization."
+date: "2025-05-19"
+tags: ["frontend", "nextjs", "performance"]
+image: "/images/projects/loader-performance.svg"
+featured: true
+company: "Northwind Labs"
+techStack: ["Next.js", "TypeScript", "Vercel", "TailwindCSS"]
+screenshots: ["/images/projects/loader-performance.svg"]
+---
+
+## Problem description
+
+The product had poor Lighthouse scores on mobile and high bounce rates on slow networks.
+
+## Architecture
+
+I moved dynamic blocks to static generation with selective hydration, split heavy modules, and added immutable
+edge caching for media assets.
+
+## Impact
+
+- Largest Contentful Paint reduced from 3.8s to 1.7s
+- Bounce rate dropped by 19%
+- Build output became mostly static and cheaper to host

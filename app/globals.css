@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: 10 11 15;
+  --fg: 232 234 237;
+  --muted: 144 153 168;
+  --line: 45 49 58;
+  --brand: 94 234 212;
+  --panel: 14 17 24;
+}
+
+.light {
+  --bg: 247 248 252;
+  --fg: 20 25 39;
+  --muted: 89 97 118;
+  --line: 205 213 225;
+  --brand: 9 108 97;
+  --panel: 255 255 255;
+}
+
+* {
+  border-color: rgb(var(--line) / 1);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 20% 0%, rgb(16 31 41 / 0.5), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgb(18 18 40 / 0.35), transparent 40%),
+    rgb(var(--bg) / 1);
+  color: rgb(var(--fg) / 1);
+  text-rendering: optimizeLegibility;
+}
+
+.light body {
+  background: radial-gradient(circle at 0% 0%, rgb(208 234 246 / 0.7), transparent 40%),
+    radial-gradient(circle at 80% 10%, rgb(213 245 239 / 0.6), transparent 45%),
+    rgb(var(--bg) / 1);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgb(var(--line) / 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--line) / 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle at center, black 0%, transparent 78%);
+  z-index: -1;
+}
+
+::selection {
+  background: rgb(var(--brand) / 0.35);
+  color: rgb(var(--fg) / 1);
+}
+
+a,
+button {
+  transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease;
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--brand) / 1);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.prose {
+  --tw-prose-body: rgb(var(--fg) / 0.9);
+  --tw-prose-headings: rgb(var(--fg) / 1);
+  --tw-prose-links: rgb(var(--brand) / 1);
+  --tw-prose-code: rgb(var(--fg) / 1);
+  --tw-prose-pre-bg: rgb(8 10 14 / 1);
+  --tw-prose-bullets: rgb(var(--muted) / 1);
+  --tw-prose-hr: rgb(var(--line) / 1);
+}
+
+.prose pre {
+  border: 1px solid rgb(var(--line) / 1);
+  border-radius: 0.75rem;
+}
+
+.prose :where(code):not(:where(pre code)) {
+  border: 1px solid rgb(var(--line) / 1);
+  border-radius: 0.375rem;
+  padding: 0.15rem 0.35rem;
+  background: rgb(15 18 26 / 1);
+}
+
+.light .prose :where(code):not(:where(pre code)) {
+  background: rgb(238 242 248 / 1);
+}

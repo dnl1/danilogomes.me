@@ -1,0 +1,7 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0A0B0F" />
+  <rect x="60" y="60" width="1080" height="510" rx="20" fill="#101722" stroke="#2D313A" />
+  <text x="120" y="250" fill="#5EEAD4" font-size="28" font-family="monospace">~/portfolio</text>
+  <text x="120" y="320" fill="#E8EAED" font-size="64" font-family="sans-serif">Danilo Gomes</text>
+  <text x="120" y="380" fill="#9099A8" font-size="30" font-family="sans-serif">Software Engineer + Electronic Music</text>
+</svg>

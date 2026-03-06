@@ -1,0 +1,7 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#0D1117" />
+  <rect x="80" y="80" width="1040" height="540" rx="20" fill="#151E2A" stroke="#2D313A" />
+  <text x="140" y="220" fill="#5EEAD4" font-size="24" font-family="monospace">blog://first-post</text>
+  <text x="140" y="320" fill="#E8EAED" font-size="54" font-family="sans-serif">Content-Driven Portfolios</text>
+  <text x="140" y="390" fill="#9099A8" font-size="28" font-family="sans-serif">Next.js + MDX</text>
+</svg>

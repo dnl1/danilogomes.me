@@ -1,0 +1,35 @@
+---
+title: "Accumulator Engine"
+description: "Pipeline de processamento de dados de alta vazao para analytics quase em tempo real."
+date: "2025-08-12"
+tags: ["backend", "performance", "distributed-systems"]
+image: "/images/projects/accumulator-engine.svg"
+featured: true
+company: "Orbit Metrics"
+techStack: ["TypeScript", "Node.js", "PostgreSQL", "Kafka", "Redis"]
+screenshots:
+  ["/images/projects/accumulator-engine.svg", "/images/projects/loader-performance.svg"]
+---
+
+## Descricao do problema
+
+O servico de ingestao tinha latencia instavel durante picos de trafego e nenhum caminho claro para recuperacao apos retries.
+
+## Arquitetura
+
+Redesenhei a camada de ingestao em uma arquitetura guiada por filas com processadores idempotentes e checkpointing.
+O modelo reduziu trabalhos duplicados e tornou as operacoes de replay previsiveis.
+
+## Impacto
+
+- Reducao de 67% na latencia p95 de ingestao
+- 40% menos custo de infraestrutura no pipeline de dados
+- Zero incidentes em producao relacionados a processamento duplicado de eventos por 4 meses
+
+```ts
+export async function processBatch(events: EventPayload[]) {
+  for (const event of events) {
+    await upsertAggregate(event.userId, event.metric, event.value);
+  }
+}
+```
