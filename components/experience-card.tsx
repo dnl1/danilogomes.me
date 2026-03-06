@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FlagIcon, getFlagCode } from "@/components/flag-icon";
 import type { ExperienceFrontmatter } from "@/lib/content";
-import { formatDate } from "@/lib/utils";
+import { formatMonthYear } from "@/lib/utils";
 
 type ExperienceCardProps = {
   entry: ExperienceFrontmatter;
@@ -53,7 +53,8 @@ export function ExperienceCard({ entry, locale, labels }: ExperienceCardProps) {
               <div key={`${role.title}-${role.start}`} className="rounded-lg border border-line/70 bg-black/20 px-4 py-3">
                 <p className="text-sm font-medium text-fg">{role.title}</p>
                 <p className="mt-1 font-mono text-xs text-muted">
-                  {formatDate(role.start, locale)} - {role.end === "Present" ? labels.present : formatDate(role.end, locale)}
+                  {formatMonthYear(role.start, locale)} -{" "}
+                  {role.end === "Present" ? labels.present : formatMonthYear(role.end, locale)}
                 </p>
               </div>
             ))}

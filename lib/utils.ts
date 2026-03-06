@@ -13,3 +13,11 @@ export function formatDate(input: string, locale: string) {
     year: "numeric"
   }).format(date);
 }
+
+export function formatMonthYear(input: string, locale: string) {
+  const date = new Date(input);
+  return new Intl.DateTimeFormat(locale === "pt" ? "pt-BR" : "en-US", {
+    month: "short",
+    year: "numeric"
+  }).format(date);
+}
