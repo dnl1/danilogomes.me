@@ -35,9 +35,6 @@ export default async function ContactPage() {
           <p>
             {t("linkedin")}: <Link href={siteConfig.links.linkedin}>{siteConfig.links.linkedin}</Link>
           </p>
-          <p>
-            {t("spotify")}: <Link href={siteConfig.links.spotify}>{siteConfig.links.spotify}</Link>
-          </p>
         </div>
       </div>
     </Container>

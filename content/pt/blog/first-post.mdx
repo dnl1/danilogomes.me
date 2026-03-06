@@ -1,29 +1,29 @@
 ---
-title: "Construindo portfolios orientados a conteudo com Next.js e MDX"
+title: "Construindo portfólios orientados a conteúdo com Next.js e MDX"
 description: "Como manter um site pessoal rapido, sustentavel e facil de publicar."
 date: "2025-10-03"
 tags: ["nextjs", "mdx", "architecture"]
 image: "/images/blog/first-post.svg"
 ---
 
-Um portfolio orientado a conteudo deve otimizar duas coisas:
+Um portfólio orientado a conteúdo devé otimizar duas coisas:
 
-1. Velocidade de publicacao
+1. Velocidade de publicação
 2. Sustentabilidade no longo prazo
 
-Com **App Router + MDX**, voce mantem o conteudo perto do codigo sem introduzir um CMS completo antes da hora.
+Com **App Router + MDX**, voce mantem o conteúdo perto do código sem introduzir um CMS completo antes da hora.
 
 ## Por que essa estrutura funciona
 
-- Geracao estatica mantem o custo de hospedagem baixo
-- MDX permite conteudo rico e snippets de codigo
+- Geracao estática mantem o custo de hospedagem baixo
+- MDX permite conteúdo rico e snippets de código
 - Metadados por rota ajudam SEO e compartilhamento social
 
 ```tsx
-export async function generateStaticParams() {
+export async function generatéStaticParams() {
   const slugs = await getSlugs("pt", "blog");
   return slugs.map((slug) => ({ slug }));
 }
 ```
 
-Quando o volume de conteudo crescer, voce pode migrar para um headless CMS preservando a logica de rota e renderizacao.
+Quando o volume de conteúdo crescer, voce pode migrar para um headless CMS preservando a lógica de rota e renderizacao.

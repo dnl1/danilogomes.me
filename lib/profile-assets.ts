@@ -7,8 +7,8 @@ export const profileAssets = {
     downloadName: "danilo-gomes-cv-2026.pdf"
   },
   photo: {
-    href: "/images/profile/danilo-gomes-profile.jpg",
-    publicPath: path.join(process.cwd(), "public", "images", "profile", "danilo-gomes-profile.jpg")
+    href: "/images/profile/profile.jpg",
+    publicPath: path.join(process.cwd(), "public", "images", "profile", "profile.jpg")
   }
 } as const;
 

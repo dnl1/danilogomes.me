@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Danilo Gomes",
   url: "https://danilogomes.dev",
-  email: "hello@example.com",
+  email: "danilo.o.gomes@proton.me",
   location: "Sao Paulo, Brazil",
   links: {
     github: "https://github.com/dnl1",

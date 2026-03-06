@@ -1,0 +1,73 @@
+---
+title: "Studio Scheduler"
+description: "Sistema de agendamento criado para organizar reservas de estúdio com lógica de disponibilidade, recorrência e visibilidade operacional."
+date: "2026-03-06"
+tags: ["C#", ".NET", "React", "TypeScript", "PostgreSQL"]
+image: "/images/personal-projects/studio-scheduler.png"
+featured: true
+company: "Projeto Pessoal"
+techStack: ["C#", ".NET", "React", "TypeScript", "PostgreSQL", "Arquitetura orientada a API"]
+screenshots:
+  - "/images/personal-projects/studio-scheduler.png"
+  - "/images/personal-projects/studio-scheduler-admin-1.png"
+  - "/images/personal-projects/studio-scheduler-admin-2.png"
+---
+
+## Overview
+
+Studio Scheduler é um sistema criado para gerenciar reservas de estúdio de ensaio. Ele foi pensado como uma plataforma
+operacional, e não apenas como uma página de calendário, com estrutura suficiente para lidar com salas, horários e
+reservas recorrentes no dia a dia.
+
+## Motivation
+
+O projeto nasceu de uma necessidade prática: muitos estúdios ainda administram reservas por WhatsApp, planilhas e
+coordenação manual. Esse processo funciona até o momento em que o volume cresce e o estúdio precisa de uma visão mais
+clara de ocupação, recorrência e conflitos de agenda.
+
+## Problem
+
+Gerenciar salas de ensaio fica caótico quando várias bandas disputam os mesmos horários. Os problemas mais comuns eram:
+
+- reservas duplicadas por atualização manual
+- comunicação fragmentada entre mensagens e planilhas
+- falta de uma visão confiável de disponibilidade
+- recorrências controladas manualmente toda semana
+
+## Solution
+
+Studio Scheduler centraliza a operação em um único sistema, no qual o estúdio consegue administrar salas, reservas e
+disponibilidade com um fluxo mais claro de agendamento.
+
+Funcionalidades principais:
+
+- agendamento de salas
+- visualização de disponibilidade
+- reservas recorrentes
+- gerenciamento de reservas
+- busca
+
+## Technical Challenges
+
+O maior desafio não era montar telas. Era desenhar uma lógica de reservas flexível o bastante para suportar a operação
+real de um estúdio sem criar um modelo frágil.
+
+Principais desafios técnicos:
+
+- desenhar regras de recorrência sem tornar alterações algo frágil
+- lidar com slots de tempo e cálculo de disponibilidade com consistência
+- evitar conflitos entre reservas sobrepostas
+- manter a plataforma extensível para múltiplas salas e futura expansão para vários estúdios
+
+## Technologies Used
+
+- C#
+- .NET
+- React
+- TypeScript
+- PostgreSQL
+- Arquitetura orientada a API
+
+## Screenshots
+
+As imagens abaixo mostram o projeto entre fluxos de reserva e administração.

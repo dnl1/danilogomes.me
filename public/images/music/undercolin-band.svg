@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <rect width="1200" height="800" fill="#0B0D10"/>
+  <rect x="56" y="56" width="1088" height="688" rx="28" stroke="#2F343C"/>
+  <path d="M122 642L326 158H400L604 642H533L481 510H244L193 642H122ZM265 446H460L362 215L265 446Z" fill="#F4F7FB"/>
+  <path d="M701 642V158H789L1007 507V158H1078V642H992L772 293V642H701Z" fill="#F4F7FB"/>
+  <text x="122" y="710" fill="#8A94A6" font-family="monospace" font-size="30">UNDERCOLIN / MELODIC HARDCORE</text>
+</svg>

@@ -1,6 +1,6 @@
 ---
 title: "Arquitetura da Plataforma Enterprise da MODEC"
-description: "Desenho de microservicos e microfrontends para uma plataforma enterprise com performance, projetos e visibilidade operacional."
+description: "Desenho de microserviços e microfrontends para uma plataforma enterprise com performance, projetos e visibilidade operacional."
 date: "2025-10-05"
 tags: ["microservices", "microfrontends", "enterprise", "modec"]
 image: "/images/og-default.svg"
@@ -11,13 +11,13 @@ featured: true
 
 ## Overview
 
-Essa plataforma suportava multiplos dominios enterprise para a MODEC, incluindo gestao de performance, gestao de
-projetos e visibilidade operacional digital. O desafio nao era apenas construir funcionalidades, mas desenhar uma
-arquitetura que permitisse evolucao independente entre modulos.
+Essa plataforma suportava multiplos domínios enterprise para a MODEC, incluindo gestão de performance, gestão de
+projetos e visibilidade operacional digital. O desafio não era apenas construir funcionalidades, mas desenhar uma
+arquitetura que permitisse evolução independente entre módulos.
 
 ## Problem
 
-O sistema precisava servir dominios diferentes:
+O sistema precisava servir domínios diferentes:
 
 - Performance Management
 - Project Management
@@ -28,31 +28,31 @@ integrar visoes operacionais e de projeto.
 
 ## Architecture
 
-A direcao arquitetural foi baseada em decomposicao:
+A direção arquitetural foi baseada em decomposicao:
 
-- microservicos para separar capacidades backend por dominio
-- microfrontends para permitir evolucao menos acoplada na camada de interface
-- ownership de modulo mapeado para capacidades de negocio
-- integracoes compartilhadas para manter visibilidade entre modulos sem voltar a um sistema unico
+- microserviços para separar capacidades backend por domínio
+- microfrontends para permitir evolução menos acoplada na camada de interface
+- ownership de módulo mapeado para capacidades de negócio
+- integrações compartilhadas para manter visibilidade entre módulos sem voltar a um sistema único
 
 ## Technical Challenges
 
-- separar modulos sem quebrar workflows enterprise
+- separar módulos sem quebrar workflows enterprise
 - integrar dados operacionais e de projeto para visibilidade de ciclo offshore
-- coordenar decisoes de arquitetura com times internos, stakeholders da MODEC e consultorias
+- coordenar decisões de arquitetura com times internos, stakeholders da MODEC e consultorias
 - manter o sistema compreensivel enquanto a modularidade aumentava
 
 ## Solution
 
-A plataforma foi evoluida com ownership explicito dos modulos:
+A plataforma foi evoluida com ownership explicito dos módulos:
 
 - Performance module
 - Projects module
 - Digital Control Tower
 
-O Digital Control Tower exigiu desenho cuidadoso de integracao de dados porque o ciclo EPCI cruza planejamento,
+O Digital Control Tower exigiu desenho cuidadoso de integração de dados porqué o ciclo EPCI cruza planejamento,
 execucao e visibilidade operacional. A solucao foi definir limites backend e frontend alinhados a capacidades de
-negocio, preservando a composicao de informacoes entre modulos.
+negócio, preservando a composicao de informações entre módulos.
 
 ## Technologies Used
 
@@ -60,9 +60,9 @@ negocio, preservando a composicao de informacoes entre modulos.
 - .NET
 - Microservices
 - Microfrontends
-- Padroes de integracao enterprise
+- Padroes de integração enterprise
 
 ## Impact
 
-A plataforma ficou mais escalavel do ponto de vista tecnico e organizacional. Os times passaram a operar com mais
-autonomia dentro de limites mais claros, sem perder coerencia de produto enterprise.
+A plataforma ficou mais escalavel do ponto de vista técnico é organizacional. Os times passaram a operar com mais
+autonomia dentro de limites mais claros, sem perder coerência de produto enterprise.

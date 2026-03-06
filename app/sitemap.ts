@@ -3,14 +3,15 @@ import { getCollection } from "@/lib/content";
 import { siteConfig } from "@/lib/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [projects, caseStudies, music, blog] = await Promise.all([
+  const [projects, personalProjects, caseStudies, music, blog] = await Promise.all([
     getCollection("en", "projects"),
+    getCollection("en", "personal-projects"),
     getCollection("en", "case-studies"),
     getCollection("en", "music"),
     getCollection("en", "blog")
   ]);
 
-  const staticPages = ["", "/about", "/experience", "/projects", "/case-studies", "/music", "/blog", "/contact"].map((route) => ({
+  const staticPages = ["", "/about", "/experience", "/projects", "/personal-projects", "/case-studies", "/music", "/blog", "/contact"].map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified: new Date(),
     changeFrequency: "weekly" as const,
@@ -20,6 +21,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const dynamicPages = [
     ...projects.map((item) => ({
       url: `${siteConfig.url}/projects/${item.slug}`,
+      lastModified: new Date(item.frontmatter.date),
+      changeFrequency: "monthly" as const,
+      priority: 0.65
+    })),
+    ...personalProjects.map((item) => ({
+      url: `${siteConfig.url}/personal-projects/${item.slug}`,
       lastModified: new Date(item.frontmatter.date),
       changeFrequency: "monthly" as const,
       priority: 0.65

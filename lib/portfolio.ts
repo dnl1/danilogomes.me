@@ -136,19 +136,19 @@ const experienceEntriesByLocale: Record<Locale, ExperienceEntry[]> = {
       logo: logoPaths.xp,
       role: "Software Engineer / Engineering Lead",
       summary:
-        "Atuei em plataformas internas de atendimento conectadas a WhatsApp e Salesforce CRM, depois participei da fundacao de uma nova plataforma de trading e da infraestrutura central de renda variavel da Clear Corretora.",
+        "Atuei em plataformas internas de atendimento conectadas a WhatsApp e Salesforce CRM, depois participei da fundação de uma nova plataforma de trading e da infraestrutura central de renda variável da Clear Corretora.",
       responsibilities: [
         "Trabalhei em sistemas internos de atendimento integrados com fluxos de WhatsApp e Salesforce CRM.",
-        "Participei da fundacao de uma nova plataforma de trading para a Clear Corretora.",
-        "Construí infraestrutura proxima ao core de negociacao usando FIX, RabbitMQ, gRPC, RPC e bibliotecas proprietarias de baixo nivel.",
-        "Fundei e liderei o time de engenharia responsavel pela plataforma de onboarding de contas corporativas.",
-        "Conduzi recrutamento, formacao do time, decisoes de arquitetura e lideranca de entrega."
+        "Participei da fundação de uma nova plataforma de trading para a Clear Corretora.",
+        "Construí infraestrutura próxima ao core de negociação usando FIX, RabbitMQ, gRPC, RPC e bibliotecas proprietárias de baixo nível.",
+        "Fundei e liderei o time de engenharia responsável pela plataforma de onboarding de contas corporativas.",
+        "Conduzi recrutamento, formação do time, decisões de arquitetura e liderança de entrega."
       ],
       technologies: ["FIX", "RabbitMQ", "gRPC", "RPC", "Bibliotecas low-level", "Salesforce"],
       impact: [
-        "Ajudei a estabelecer infraestrutura de trading em um ambiente financeiro de alta criticidade, onde confiabilidade e latencia afetam diretamente a operacao.",
-        "Criei a base tecnica e organizacional para um dominio dedicado de onboarding corporativo.",
-        "Ampliei o escopo de atuacao de implementacao para construcao de time e lideranca arquitetural."
+        "Ajudei a estabelecer infraestrutura de trading em um ambiente financeiro de alta criticidade, onde confiabilidade e latência afetam diretamente a operação.",
+        "Criei a base técnica e organizacional para um domínio dedicado de onboarding corporativo.",
+        "Ampliei o escopo de atuação de implementação para construção de time e liderança arquitetural."
       ]
     },
     {
@@ -157,18 +157,18 @@ const experienceEntriesByLocale: Record<Locale, ExperienceEntry[]> = {
       logo: logoPaths.shape,
       role: "Senior Software Engineer",
       summary:
-        "Atuei em uma grande plataforma enterprise usada pela MODEC para performance, projetos e visibilidade operacional, evoluindo a arquitetura para servicos e frontends escalaveis de forma independente.",
+        "Atuei em uma grande plataforma enterprise usada pela MODEC para performance, projetos e visibilidade operacional, evoluindo a arquitetura para serviços e frontends escaláveis de forma independente.",
       responsibilities: [
-        "Liderei a evolucao de uma plataforma integrada para uma arquitetura de microservicos e microfrontends.",
-        "Assumi ownership dos modulos de Performance, Projects e Digital Control Tower.",
+        "Liderei a evolução de uma plataforma integrada para uma arquitetura de microserviços e microfrontends.",
+        "Assumi ownership dos módulos de Performance, Projects e Digital Control Tower.",
         "Defini limites de backend e frontend para fluxos enterprise complexos.",
         "Coordenei entrega entre times internos, stakeholders da MODEC e consultorias externas."
       ],
-      technologies: ["C#", ".NET", "Microservicos", "Microfrontends", "SQL Server", "React"],
+      technologies: ["C#", ".NET", "Microserviços", "Microfrontends", "SQL Server", "React"],
       impact: [
-        "Melhorei modularidade e autonomia entre times ao decompor a plataforma em dominios tecnicos mais claros.",
+        "Melhorei modularidade e autonomia entre times ao decompor a plataforma em domínios técnicos mais claros.",
         "Viabilizei capacidades do Digital Control Tower para o ciclo EPCI de plataformas offshore.",
-        "Construi uma arquitetura mais escalavel para um sistema enterprise usado em decisoes operacionais."
+        "Construí uma arquitetura mais escalável para um sistema enterprise usado em decisões operacionais."
       ]
     },
     {
@@ -177,18 +177,18 @@ const experienceEntriesByLocale: Record<Locale, ExperienceEntry[]> = {
       logo: logoPaths.rxsense,
       role: "Principal Engineer",
       summary:
-        "Entrei para modernizar sistemas centrais de infraestrutura financeira em saude, mantendo a estabilidade de uma grande plataforma monolitica com fluxos criticos de acumuladores, ledger e ajustes.",
+        "Entrei para modernizar sistemas centrais de infraestrutura financeira em saúde, mantendo a estabilidade de uma grande plataforma monolítica com fluxos críticos de acumuladores, ledger e ajustes.",
       responsibilities: [
         "Atuei em accumulator systems, ajustes de healthcare claims, ledger processing e data loaders.",
         "Foquei em melhorias de SQL, tuning de performance e confiabilidade de batch processing.",
-        "Desenhei caminhos de modernizacao que reduziam risco sem comprometer a continuidade do negocio.",
-        "Trabalhei com processamento de grandes volumes de dados em sistemas financeiros sensiveis."
+        "Desenhei caminhos de modernização que reduziam risco sem comprometer a continuidade do negócio.",
+        "Trabalhei com processamento de grandes volumes de dados em sistemas financeiros sensíveis."
       ],
       technologies: ["C#", "SQL Server", "Pipelines batch", "Grandes datasets", "Tuning de performance"],
       impact: [
-        "Melhorei throughput em fluxos financeiros de saude intensivos em dados.",
-        "Reduzi risco de modernizacao preservando a estabilidade operacional de um monolito critico.",
-        "Fortaleci a base tecnica para futuras etapas de otimizacao e evolucao do sistema."
+        "Melhorei throughput em fluxos financeiros de saúde intensivos em dados.",
+        "Reduzi risco de modernização preservando a estabilidade operacional de um monolito crítico.",
+        "Fortaleci a base técnica para futuras etapas de otimização e evolução do sistema."
       ]
     },
     {
@@ -199,16 +199,16 @@ const experienceEntriesByLocale: Record<Locale, ExperienceEntry[]> = {
       summary:
         "Atualmente lidero iniciativas de engenharia entre arquitetura, mentoria e entrega, construindo plataformas web modernas com backends em Python e frontends em TypeScript.",
       responsibilities: [
-        "Lidero iniciativas de engenharia desde o desenho do sistema ate a entrega.",
-        "Defino arquitetura para servicos backend e plataformas web modernas.",
-        "Mentoro engenheiros e estabeleco direcao tecnica entre projetos.",
+        "Lidero iniciativas de engenharia desde o desenho do sistema até a entrega.",
+        "Defino arquitetura para serviços backend e plataformas web modernas.",
+        "Mentoro engenheiros e estabeleço direção técnica entre projetos.",
         "Construo plataformas de produto com APIs em Python, frontends em Next.js e workflows de deploy na Vercel."
       ],
       technologies: ["Python", "FastAPI", "Flask", "TypeScript", "Next.js", "Vercel"],
       impact: [
-        "Melhorei a execucao com arquitetura mais clara e lideranca de engenharia mais forte.",
-        "Acelerei entregas com uma abordagem full stack pragmatica entre backend, frontend e plataforma.",
-        "Elevei a consistencia em direcao tecnica, qualidade de codigo e praticas de deploy."
+        "Melhorei a execução com arquitetura mais clara e liderança de engenharia mais forte.",
+        "Acelerei entregas com uma abordagem full stack pragmática entre backend, frontend e plataforma.",
+        "Elevei a consistência em direção técnica, qualidade de código e práticas de deploy."
       ]
     }
   ]
@@ -281,38 +281,38 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
     {
       title: "Trading Infrastructure Platform",
       description:
-        "Trabalho de infraestrutura central para um ambiente de trading de renda variavel na Clear Corretora.",
+        "Trabalho de infraestrutura central para um ambiente de trading de renda variável na Clear Corretora.",
       technologies: ["FIX", "RabbitMQ", "gRPC", "RPC", "Bibliotecas low-level"],
       problem:
-        "A stack de trading precisava de comunicacao confiavel de baixa latencia e infraestrutura resiliente em um ambiente de corretora altamente sensivel.",
+        "A stack de trading precisava de comunicação confiável de baixa latência e infraestrutura resiliente em um ambiente de corretora altamente sensível.",
       approach:
-        "Atuei proximo ao core da plataforma com protocolos de mensageria e bibliotecas proprietarias de baixo nivel, ajudando a estruturar camadas de transporte e interacoes entre servicos adequadas ao fluxo de negociacao.",
+        "Atuei próximo ao core da plataforma com protocolos de mensageria e bibliotecas proprietárias de baixo nível, ajudando a estruturar camadas de transporte e interações entre serviços adequadas ao fluxo de negociação.",
       impact:
-        "Contribui para a fundacao e evolucao da infraestrutura que suporta operacoes de trading criticas para o negocio."
+        "Contribui para a fundação e evolução da infraestrutura que suporta operações de trading críticas para o negócio."
     },
     {
       title: "Corporate Account Onboarding Platform",
       description:
-        "Plataforma dedicada ao registro e onboarding de contas corporativas com ownership de engenharia proprio.",
-      technologies: ["Arquitetura", "Lideranca", "Servicos backend", "Workflow systems"],
+        "Plataforma dedicada ao registro é onboarding de contas corporativas com ownership de engenharia próprio.",
+      technologies: ["Arquitetura", "Liderança", "Serviços backend", "Workflow systems"],
       problem:
-        "O onboarding corporativo precisava de ownership mais claro, arquitetura escalavel e um time de engenharia dedicado para sustentar o crescimento.",
+        "O onboarding corporativo precisava de ownership mais claro, arquitetura escalável e um time de engenharia dedicado para sustentar o crescimento.",
       approach:
-        "Fundei o time, conduzi recrutamento, desenhei a arquitetura da plataforma e estabeleci a direcao de engenharia para entrega e sustentacao no longo prazo.",
+        "Fundei o time, conduzi recrutamento, desenhei a arquitetura da plataforma e estabeleci a direção de engenharia para entrega e sustentacao no longo prazo.",
       impact:
-        "Criei uma estrutura tecnica e organizacional mais clara para o dominio de onboarding, melhorando ownership e escalabilidade."
+        "Criei uma estrutura técnica e organizacional mais clara para o domínio de onboarding, melhorando ownership e escalabilidade."
     },
     {
       title: "Enterprise Platform for MODEC",
       description:
-        "Grande plataforma enterprise para gestao de performance, projetos e visibilidade operacional digital.",
-      technologies: ["C#", ".NET", "Microservicos", "Microfrontends", "SQL Server", "React"],
+        "Grande plataforma enterprise para gestão de performance, projetos e visibilidade operacional digital.",
+      technologies: ["C#", ".NET", "Microserviços", "Microfrontends", "SQL Server", "React"],
       problem:
-        "A plataforma precisava suportar varios dominios enterprise complexos, mantendo capacidade de evolucao para novas demandas operacionais e de gestao de projetos.",
+        "A plataforma precisava suportar vários domínios enterprise complexos, mantendo capacidade de evolução para novas demandas operacionais e de gestão de projetos.",
       approach:
-        "Liderei a migracao para uma arquitetura de microservicos e microfrontends, com ownership de modulos criticos e alinhamento arquitetural com stakeholders e consultorias.",
+        "Liderei a migração para uma arquitetura de microserviços e microfrontends, com ownership de módulos críticos e alinhamento arquitetural com stakeholders e consultorias.",
       impact:
-        "Melhorei modularidade, autonomia de entrega e manutencao para uma plataforma usada em contextos offshore complexos."
+        "Melhorei modularidade, autonomia de entrega e manutenção para uma plataforma usada em contextos offshore complexos."
     },
     {
       title: "Healthcare Accumulator Processing Systems",
@@ -320,23 +320,23 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
         "Modernizacao e performance em acumuladores, ajustes de claims, ledger processing e data loaders.",
       technologies: ["C#", "SQL Server", "Processamento batch", "Grandes datasets", "Tuning de performance"],
       problem:
-        "Os sistemas centrais financeiros de healthcare precisavam evoluir em performance e modernizacao sem colocar em risco a estabilidade de um ambiente monolitico critico.",
+        "Os sistemas centrais financeiros de healthcare precisavam evoluir em performance e modernização sem colocar em risco a estabilidade de um ambiente monolitico crítico.",
       approach:
-        "Foquei em otimizacao de SQL, eficiencia de batch processing e caminhos incrementais de modernizacao que preservassem a continuidade operacional.",
+        "Foquei em otimização de SQL, eficiencia de batch processing e caminhos incrementais de modernização que preservassem a continuidadé operacional.",
       impact:
-        "Melhorei throughput e manutencao em fluxos financeiros de saude de larga escala, reduzindo risco de entrega."
+        "Melhorei throughput e manutenção em fluxos financeiros de saúde de larga escala, reduzindo risco de entrega."
     },
     {
       title: "Modern Web Platforms with Next.js and Vercel",
       description:
-        "Plataformas de produto orientadas a desenvolvedor, construidas com frontend moderno e servicos backend guiados por APIs.",
+        "Plataformas de produto orientadas a desenvolvedor, construidas com frontend moderno e serviços backend guiados por APIs.",
       technologies: ["TypeScript", "React", "Next.js", "Vercel", "FastAPI", "Flask"],
       problem:
-        "Os times precisavam de plataformas web modernas que equilibrassem performance de frontend, velocidade de desenvolvimento e integracao limpa com o backend.",
+        "Os times precisavam de plataformas web modernas que equilibrassem performance de frontend, velocidade de desenvolvimento e integração limpa com o backend.",
       approach:
         "Construí sistemas full stack combinando server-side rendering, static generation, APIs em Python e workflows leves de deploy na Vercel.",
       impact:
-        "Entreguei plataformas mais faceis de manter, com bom equilibrio entre experiencia do usuario, ergonomia de desenvolvimento e simplicidade operacional."
+        "Entreguei plataformas mais fáceis de manter, com bom equilibrio entre experiência do usuário, ergonomia de desenvolvimento e simplicidadé operacional."
     }
   ]
 };

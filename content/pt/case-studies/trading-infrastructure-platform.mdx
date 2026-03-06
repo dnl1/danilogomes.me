@@ -1,6 +1,6 @@
 ---
 title: "Plataforma de Infraestrutura de Trading"
-description: "Construcao de fundamentos de infraestrutura para um ambiente de corretora com mensageria de baixa latencia e integracoes baseadas em protocolo."
+description: "Construcao de fundamentos de infraestrutura para um ambiente de corretora com mensageria de baixa latência e integrações baseadas em protocolo."
 date: "2025-11-01"
 tags: ["fix", "rabbitmq", "grpc", "rpc", "corretora"]
 image: "/images/og-default.svg"
@@ -11,42 +11,42 @@ featured: true
 
 ## Overview
 
-Este trabalho teve foco na fundacao da infraestrutura de uma plataforma de trading em um ambiente de corretora, onde
-confiabilidade, latencia e corretude de protocolo afetam diretamente a operacao. O sistema precisava suportar fluxos de
-trading, conectividade com mercado e coordenacao entre servicos internos sem introduzir instabilidade em caminhos
-criticos.
+Este trabalho teve foco na fundação da infraestrutura de uma plataforma de trading em um ambiente de corretora, onde
+confiabilidade, latência e corretude de protocolo afetam diretamente a operação. O sistema precisava suportar fluxos de
+trading, conectividade com mercado e coordenação entre serviços internos sem introduzir instabilidade em caminhos
+críticos.
 
 ## Problem
 
-Sistemas de corretora sao dificeis porque ficam entre requisitos de protocolo de mercado, regras de negocio internas e
-resiliencia operacional. A plataforma precisava coordenar multiplos servicos internos mantendo baixa latencia,
-mensageria previsivel e tratamento seguro de falhas em cargas financeiras.
+Sistemas de corretora sao dificeis porque ficam entre requisitos de protocolo de mercado, regras de negócio internas e
+resiliencia operacional. A plataforma precisava coordenar multiplos serviços internos mantendo baixa latência,
+mensageria previsível e tratamento seguro de falhas em cargas financeiras.
 
 ## Architecture
 
 A plataforma usou uma arquitetura orientada a protocolo e mensageria:
 
-- FIX para interacoes ligadas ao dominio de trading
-- RabbitMQ para comunicacao assincrona entre servicos internos
-- gRPC e RPC para caminhos sincronicos de menor latencia
-- bibliotecas proprietarias de baixo nivel para pontos de integracao proximos do core
+- FIX para interações ligadas ao domínio de trading
+- RabbitMQ para comunicação assincrona entre serviços internos
+- gRPC e RPC para caminhos síncronos de menor latência
+- bibliotecas proprietárias de baixo nível para pontos de integração próximos do core
 
-Essa arquitetura separou preocupacoes de transporte conforme o tipo de workload.
+Essa arquitetura separou preocupacoes de transporte conformé o tipo de workload.
 
 ## Technical Challenges
 
-- equilibrar baixa latencia com confiabilidade operacional em um ambiente financeiro
+- equilibrar baixa latência com confiabilidadé operacional em um ambiente financeiro
 - lidar com ordenacao de mensagens, retries e expectativas de protocolo
-- combinar padroes sincronicos e assincronos com necessidades diferentes de latencia e consistencia
-- trabalhar perto de bibliotecas de baixo nivel com poucas camadas de abstracao
+- combinar padrões síncronos e assíncronos com necessidades diferentes de latência e consistência
+- trabalhar perto de bibliotecas de baixo nível com poucas camadas de abstração
 
 ## Solution
 
-A abordagem de engenharia enfatizou limites claros de comunicacao:
+A abordagem de engenharia enfatizou limites claros de comunicação:
 
 - filas onde desacoplamento e resiliencia eram prioritarios
 - RPC onde baixo overhead e clareza de contrato eram fundamentais
-- fluxos sensiveis de trading mantidos perto de camadas de integracao dedicadas
+- fluxos sensiveis de trading mantidos perto de camadas de integração dedicadas
 - tratamento de falhas, observabilidade e previsibilidade operacional desde o inicio
 
 ## Technologies Used
@@ -55,9 +55,9 @@ A abordagem de engenharia enfatizou limites claros de comunicacao:
 - RabbitMQ
 - gRPC
 - RPC
-- Bibliotecas proprietarias de integracao
+- Bibliotecas proprietárias de integração
 
 ## Impact
 
-Esse trabalho ajudou a criar a base de infraestrutura de uma plataforma de trading onde padroes de comunicacao,
-confiabilidade e corretude de protocolo faziam parte do proprio produto.
+Esse trabalho ajudou a criar a base de infraestrutura de uma plataforma de trading onde padrões de comunicação,
+confiabilidade e corretude de protocolo faziam parte do próprio produto.

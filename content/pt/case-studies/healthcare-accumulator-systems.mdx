@@ -1,6 +1,6 @@
 ---
-title: "Sistemas de Acumuladores em Saude"
-description: "Modernizacao de infraestrutura de acumuladores e ajustes de claim em uma grande plataforma financeira de saude."
+title: "Sistemas de Acumuladores em Saúde"
+description: "Modernizacao de infraestrutura de acumuladores e ajustes de claim em uma grande plataforma financeira de saúde."
 date: "2025-09-22"
 tags: ["healthcare", "accumulators", "batch-processing", "sql"]
 image: "/images/og-default.svg"
@@ -11,25 +11,25 @@ featured: true
 
 ## Overview
 
-Sistemas financeiros de saude carregam forte exigencia de corretude porque saldos, ajustes e estado financeiro afetam
+Sistemas financeiros de saúde carregam forte exigencia de corretude porque saldos, ajustes e estado financeiro afetam
 comportamentos downstream. O foco aqui foi em acumuladores, loaders, ajustes de claim e processamento onde corretude e
 performance precisavam coexistir.
 
 ## Problem
 
-Os acumuladores eram responsaveis por acompanhar saldos em niveis individual e familiar, interagindo com logica de
-ajuste de claims e outros processos financeiros. O ambiente tambem precisava lidar com:
+Os acumuladores eram responsaveis por acompanhar saldos em niveis individual e familiar, interagindo com lógica de
+ajuste de claims é outros processos financeiros. O ambiente também precisava lidar com:
 
 - grandes volumes de dados
 - processamento batch custoso
-- restricoes fortes de integridade
+- restrições fortes de integridade
 - gargalos de performance em SQL e movimentacao de dados
 
 ## Architecture
 
 As areas mais relevantes incluiam:
 
-- logica de saldo de acumuladores
+- lógica de saldo de acumuladores
 - workflows de ajuste de claims
 - limites orientados a ledger
 - loaders de dados e pipelines batch
@@ -39,15 +39,15 @@ O desafio arquitetural aqui era modernizar de forma seletiva dentro de uma plata
 ## Technical Challenges
 
 - preservar integridade de saldos financeiros em grandes volumes
-- tratar regras de acumuladores familiares e individuais sem inconsistencias sutis
+- tratar regras de acumuladores familiares e individuais sem inconsistências sutis
 - melhorar performance de loaders e batches sem desestabilizar o core
-- encontrar oportunidades de modernizacao dentro de um ambiente monolitico maduro
+- encontrar oportunidades de modernização dentro de um ambiente monolitico maduro
 
 ## Solution
 
 A solucao priorizou melhorias focadas e de baixo risco:
 
-- otimizar caminhos SQL onde o acesso a dados era o principal gargalo
+- otimizar caminhos SQL ondé o acesso a dados era o principal gargalo
 - refinar pipelines batch para melhorar throughput
 - melhorar comportamento de loaders e workflows financeiros
 - modernizar seletivamente em vez de tentar reescritas de alto risco
@@ -62,5 +62,5 @@ A solucao priorizou melhorias focadas e de baixo risco:
 
 ## Impact
 
-O resultado foi uma base tecnica mais saudavel para workflows de acumuladores e ajustes: melhor performance, caminhos de
-modernizacao mais claros e mais confianca no comportamento financeiro sensivel a dados.
+O resultado foi uma base técnica mais saudável para workflows de acumuladores e ajustes: melhor performance, caminhos de
+modernização mais claros e mais confiança no comportamento financeiro sensível a dados.

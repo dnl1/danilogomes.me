@@ -4,9 +4,8 @@ export type SpotifyRelease = {
   subtitle: string;
   image: string;
   href: string;
+  previewUrl?: string;
 };
-
-const DNL1_ARTIST_ID = "7IbyntkWwrrsRd9RSTRo8J";
 
 type SpotifyImageSource = {
   height?: number;
@@ -25,6 +24,28 @@ type SpotifyReleaseEntry = {
   type?: string;
   uri?: string;
 };
+
+type SpotifyTopTrackEntry = {
+  track?: {
+    albumOfTrack?: {
+      uri?: string;
+    };
+    previews?: {
+      audioPreviews?: {
+        items?: Array<{
+          url?: string;
+        }>;
+      };
+    };
+  };
+};
+
+const ARTIST_IDS = {
+  dnl1: "7IbyntkWwrrsRd9RSTRo8J",
+  undercolin: "6nwROjcnQdTIbv2zIu6Frn"
+} as const;
+
+export type SpotifyArtistKey = keyof typeof ARTIST_IDS;
 
 function decodeHtml(value: string) {
   return value
@@ -50,7 +71,7 @@ function decodeInitialState(html: string) {
           string,
           {
             discography?: {
-              latest?: SpotifyReleaseEntry;
+              latest?: SpotifyReleaseEntry | null;
               popularReleasesAlbums?: {
                 items?: SpotifyReleaseEntry[];
               };
@@ -60,6 +81,9 @@ function decodeInitialState(html: string) {
                     items?: SpotifyReleaseEntry[];
                   };
                 }>;
+              };
+              topTracks?: {
+                items?: SpotifyTopTrackEntry[];
               };
             };
           }
@@ -92,9 +116,9 @@ function mapRelease(entry: SpotifyReleaseEntry): SpotifyRelease | null {
   };
 }
 
-function extractReleasesFromState(html: string, limit: number) {
+function extractReleasesFromState(html: string, artistId: string, limit: number) {
   const initialState = decodeInitialState(html);
-  const artist = initialState?.entities?.items?.[`spotify:artist:${DNL1_ARTIST_ID}`];
+  const artist = initialState?.entities?.items?.[`spotify:artist:${artistId}`];
 
   if (!artist?.discography) {
     return [];
@@ -118,6 +142,16 @@ function extractReleasesFromState(html: string, limit: number) {
 
   const releases: SpotifyRelease[] = [];
   const seen = new Set<string>();
+  const previews = new Map<string, string>();
+
+  for (const item of artist.discography.topTracks?.items ?? []) {
+    const albumId = item.track?.albumOfTrack?.uri?.split(":").pop();
+    const previewUrl = item.track?.previews?.audioPreviews?.items?.find((preview) => preview.url)?.url;
+
+    if (albumId && previewUrl && !previews.has(albumId)) {
+      previews.set(albumId, previewUrl);
+    }
+  }
 
   for (const candidate of candidates) {
     const release = mapRelease(candidate);
@@ -127,6 +161,7 @@ function extractReleasesFromState(html: string, limit: number) {
     }
 
     seen.add(release.id);
+    release.previewUrl = previews.get(release.id);
     releases.push(release);
 
     if (releases.length >= limit) {
@@ -137,27 +172,7 @@ function extractReleasesFromState(html: string, limit: number) {
   return releases;
 }
 
-export async function getLatestSpotifyReleases(limit = 4): Promise<SpotifyRelease[]> {
-  const response = await fetch(`https://open.spotify.com/artist/${DNL1_ARTIST_ID}`, {
-    headers: {
-      "user-agent": "Mozilla/5.0"
-    },
-    next: {
-      revalidate: 60 * 60 * 12
-    }
-  });
-
-  if (!response.ok) {
-    throw new Error(`Spotify request failed with status ${response.status}`);
-  }
-
-  const html = await response.text();
-  const stateReleases = extractReleasesFromState(html, limit);
-
-  if (stateReleases.length) {
-    return stateReleases;
-  }
-
+function extractReleasesFromHtml(html: string, limit: number) {
   const matches = html.matchAll(
     /<a[^>]+href="\/album\/([^"]+)"[^>]*><img[^>]+src="([^"]+)"[^>]*><div[^>]*><span[^>]*>([^<]+)<\/span><span[^>]*>([^<]+)<\/span><\/div><\/a>/g
   );
@@ -187,4 +202,36 @@ export async function getLatestSpotifyReleases(limit = 4): Promise<SpotifyReleas
   }
 
   return releases;
+}
+
+export async function getLatestSpotifyReleasesByArtist(
+  artist: SpotifyArtistKey,
+  limit = 4
+): Promise<SpotifyRelease[]> {
+  const artistId = ARTIST_IDS[artist];
+  const response = await fetch(`https://open.spotify.com/artist/${artistId}`, {
+    headers: {
+      "user-agent": "Mozilla/5.0"
+    },
+    next: {
+      revalidate: 60 * 60 * 12
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`Spotify request failed with status ${response.status}`);
+  }
+
+  const html = await response.text();
+  const stateReleases = extractReleasesFromState(html, artistId, limit);
+
+  if (stateReleases.length) {
+    return stateReleases;
+  }
+
+  return extractReleasesFromHtml(html, limit);
+}
+
+export async function getLatestSpotifyReleases(limit = 4): Promise<SpotifyRelease[]> {
+  return getLatestSpotifyReleasesByArtist("dnl1", limit);
 }

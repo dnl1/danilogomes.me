@@ -1,0 +1,74 @@
+---
+title: "Studio Scheduler"
+description: "A scheduling system designed to organize rehearsal studio bookings with availability logic, recurring reservations, and clear operational visibility."
+date: "2026-03-06"
+tags: ["C#", ".NET", "React", "TypeScript", "PostgreSQL"]
+image: "/images/personal-projects/studio-scheduler.png"
+featured: true
+company: "Personal Project"
+techStack: ["C#", ".NET", "React", "TypeScript", "PostgreSQL", "API-driven architecture"]
+screenshots:
+  - "/images/personal-projects/studio-scheduler.png"
+  - "/images/personal-projects/studio-scheduler-admin-1.png"
+  - "/images/personal-projects/studio-scheduler-admin-2.png"
+---
+
+## Overview
+
+Studio Scheduler is a system created to manage rehearsal studio bookings. It was designed as an operational platform,
+not just a calendar page, with enough structure to handle the realities of creative spaces that manage rooms, time
+slots, and repeated reservations every week.
+
+## Motivation
+
+The project came from a practical gap in the market: many rehearsal studios still manage reservations through WhatsApp
+threads, spreadsheets, and manual coordination. That process works until volume increases and the studio needs a clearer
+view of room usage, recurring bookings, and schedule conflicts.
+
+## Problem
+
+Managing rehearsal rooms becomes chaotic when multiple bands compete for the same time windows. The most common issues
+were:
+
+- double bookings caused by manual updates
+- fragmented communication across messages and spreadsheets
+- no reliable view of room availability
+- recurring reservations handled manually every week
+
+## Solution
+
+Studio Scheduler centralizes the operation into a single system where studio owners can manage rooms, reservations, and
+availability with a clearer scheduling workflow.
+
+Core capabilities include:
+
+- room scheduling
+- availability visualization
+- recurring reservations
+- reservation management
+- search functionality
+
+## Technical Challenges
+
+The hardest part was not building screens. It was designing reservation logic flexible enough to support real studio
+operations without making the data model brittle.
+
+Main technical challenges included:
+
+- designing recurrence rules without turning updates into a fragile workflow
+- handling time slots and availability calculations consistently
+- preventing booking conflicts across overlapping reservations
+- keeping the platform extensible enough for multiple rooms and future multi-studio support
+
+## Technologies Used
+
+- C#
+- .NET
+- React
+- TypeScript
+- PostgreSQL
+- API-driven architecture
+
+## Screenshots
+
+The images below show the project across booking and admin flows.

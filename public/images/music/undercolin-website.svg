@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <rect width="1200" height="800" fill="#0B0D10"/>
+  <rect x="74" y="74" width="1052" height="652" rx="24" stroke="#2F343C"/>
+  <rect x="126" y="146" width="948" height="72" rx="14" fill="#151A20"/>
+  <rect x="126" y="258" width="384" height="330" rx="20" fill="#151A20"/>
+  <rect x="548" y="258" width="526" height="152" rx="20" fill="#151A20"/>
+  <rect x="548" y="436" width="526" height="152" rx="20" fill="#151A20"/>
+  <text x="126" y="124" fill="#F4F7FB" font-family="monospace" font-size="34">UNDERCOLIN / WEB</text>
+  <text x="155" y="193" fill="#8A94A6" font-family="monospace" font-size="24">https://undercolin.vercel.app</text>
+</svg>

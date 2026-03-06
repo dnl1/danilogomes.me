@@ -1,20 +1,23 @@
 import { ExperienceCard } from "@/components/experience-card";
-import type { ExperienceEntry } from "@/lib/portfolio";
+import type { ExperienceFrontmatter } from "@/lib/content";
 
 type ExperienceTimelineProps = {
-  entries: ExperienceEntry[];
+  entries: ExperienceFrontmatter[];
+  locale: string;
   labels: {
+    location: string;
+    progression: string;
     responsibilities: string;
     technologies: string;
-    impact: string;
+    present: string;
   };
 };
 
-export function ExperienceTimeline({ entries, labels }: ExperienceTimelineProps) {
+export function ExperienceTimeline({ entries, locale, labels }: ExperienceTimelineProps) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 md:border-l md:border-line/80 md:pl-8">
       {entries.map((entry) => (
-        <ExperienceCard key={entry.slug} entry={entry} labels={labels} />
+        <ExperienceCard key={entry.company} entry={entry} locale={locale} labels={labels} />
       ))}
     </div>
   );

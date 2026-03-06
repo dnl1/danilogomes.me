@@ -2,15 +2,13 @@ import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { LanguageSelector } from "@/components/language-selector";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 const navItems = [
   { href: "/about", key: "about" },
   { href: "/experience", key: "experience" },
   { href: "/projects", key: "projects" },
-  { href: "/case-studies", key: "caseStudies" },
+  { href: "/personal-projects", key: "personalProjects" },
   { href: "/music", key: "music" },
-  { href: "/blog", key: "blog" },
   { href: "/contact", key: "contact" }
 ] as const;
 
@@ -41,7 +39,6 @@ export async function Navbar() {
 
         <div className="flex items-center gap-3">
           <LanguageSelector />
-          <ThemeToggle />
         </div>
       </Container>
     </header>

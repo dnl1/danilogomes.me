@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ProjectFrontmatter } from "@/lib/content";
 import type { PortfolioProject } from "@/lib/portfolio";
@@ -8,6 +9,7 @@ type CompactProjectCardProps = {
   slug: string;
   data: ProjectFrontmatter;
   locale: string;
+  hrefPrefix?: "/projects" | "/personal-projects";
 };
 
 type DetailedProjectCardProps = {
@@ -57,14 +59,23 @@ export function ProjectCard(props: ProjectCardProps) {
     );
   }
 
-  const { slug, data, locale } = props;
+  const { slug, data, locale, hrefPrefix = "/projects" } = props;
 
   return (
     <Link
-      href={`/projects/${slug}`}
+      href={`${hrefPrefix}/${slug}`}
       className="group rounded-xl border border-line/80 bg-black/20 p-5 transition hover:border-brand/80 hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
     >
-      <p className="mb-2 font-mono text-xs text-muted">{formatDate(data.date, locale)}</p>
+      <div className="overflow-hidden rounded-xl border border-line/80 bg-black/30">
+        <Image
+          src={data.image}
+          alt={data.title}
+          width={1600}
+          height={900}
+          className="aspect-[16/10] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+        />
+      </div>
+      <p className="mb-2 mt-4 font-mono text-xs text-muted">{formatDate(data.date, locale)}</p>
       <h3 className="text-xl font-semibold tracking-tight group-hover:text-brand">{data.title}</h3>
       <p className="mt-3 text-sm text-muted">{data.description}</p>
       <div className="mt-4 flex flex-wrap gap-2">

@@ -20,7 +20,7 @@ export async function GET() {
     locale === "pt" ? "Danilo Gomes | Engenheiro de Software" : "Danilo Gomes | Software Engineer";
   const channelDescription =
     locale === "pt"
-      ? "Engenheiro de software com mais de 10 anos de experiencia projetando sistemas financeiros, de saude e plataformas empresariais complexas."
+      ? "Engenheiro de software com mais de 10 anos de experiência projetando sistemas financeiros, de saúde e plataformas empresariais complexas."
       : "Software engineer with more than 10 years of experience designing complex financial, healthcare, and enterprise platforms.";
 
   const items = posts

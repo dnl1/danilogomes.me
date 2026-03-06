@@ -10,7 +10,13 @@ import remarkGfm from "remark-gfm";
 import { mdxComponents } from "@/components/mdx";
 import type { Locale } from "@/i18n/routing";
 
-export type CollectionName = "projects" | "music" | "blog" | "case-studies";
+export type CollectionName =
+  | "projects"
+  | "personal-projects"
+  | "experience"
+  | "music"
+  | "blog"
+  | "case-studies";
 
 export type BaseFrontmatter = {
   title: string;
@@ -25,6 +31,23 @@ export type ProjectFrontmatter = BaseFrontmatter & {
   company: string;
   techStack: string[];
   screenshots?: string[];
+};
+
+export type ExperienceRole = {
+  title: string;
+  start: string;
+  end: string;
+};
+
+export type ExperienceFrontmatter = BaseFrontmatter & {
+  company: string;
+  location: string;
+  logo: string;
+  logoBackground?: "dark" | "light";
+  summary?: string;
+  roles: ExperienceRole[];
+  technologies: string[];
+  responsibilities: string[];
 };
 
 export type MusicFrontmatter = BaseFrontmatter & {
@@ -43,6 +66,8 @@ export type CaseStudyFrontmatter = BaseFrontmatter & {
 
 export type CollectionFrontmatter = {
   projects: ProjectFrontmatter;
+  "personal-projects": ProjectFrontmatter;
+  experience: ExperienceFrontmatter;
   music: MusicFrontmatter;
   blog: BlogFrontmatter;
   "case-studies": CaseStudyFrontmatter;
@@ -60,6 +85,10 @@ export type CollectionMdxItem<T extends BaseFrontmatter> = {
 };
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
+
+function stripScreenshotsSection(source: string) {
+  return source.replace(/\n## Screenshots[\s\S]*$/m, "");
+}
 
 function getCollectionPath(locale: Locale, collection: CollectionName) {
   return path.join(CONTENT_ROOT, locale, collection);
@@ -107,8 +136,11 @@ export async function getContentBySlug<T extends CollectionName>(
     const filePath = path.join(getCollectionPath(locale, collection), `${slug}.mdx`);
     const source = await fs.readFile(filePath, "utf8");
 
+    const normalizedSource =
+      collection === "personal-projects" ? stripScreenshotsSection(source) : source;
+
     const { content, frontmatter } = await compileMDX<CollectionFrontmatter[T]>({
-      source,
+      source: normalizedSource,
       components: mdxComponents,
       options: {
         parseFrontmatter: true,

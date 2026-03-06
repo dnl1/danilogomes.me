@@ -5,8 +5,8 @@ import { ExperienceTimeline } from "@/components/experience-timeline";
 import { ProfileAssetsCard } from "@/components/profile-assets-card";
 import { SocialLinks } from "@/components/social-links";
 import type { Locale } from "@/i18n/routing";
+import { getCollection } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
-import { getExperienceEntries } from "@/lib/portfolio";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("ExperiencePage");
@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function ExperiencePage() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("ExperiencePage");
-  const entries = getExperienceEntries(locale);
+  const entries = await getCollection(locale, "experience");
 
   return (
     <Container className="py-16 md:py-24">
@@ -58,11 +58,14 @@ export default async function ExperiencePage() {
           <h2 className="font-mono text-lg text-brand">{t("timelineTitle")}</h2>
         </div>
         <ExperienceTimeline
-          entries={entries}
+          entries={entries.map((entry) => entry.frontmatter)}
+          locale={locale}
           labels={{
+            location: t("location"),
+            progression: t("progression"),
             responsibilities: t("responsibilities"),
             technologies: t("technologies"),
-            impact: t("impact")
+            present: t("present")
           }}
         />
       </section>
