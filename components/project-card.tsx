@@ -31,7 +31,20 @@ export function ProjectCard(props: ProjectCardProps) {
 
     return (
       <article className="rounded-2xl border border-line/80 bg-black/20 p-6">
-        <h3 className="text-2xl font-semibold tracking-tight">{project.title}</h3>
+        <h3 className="text-2xl font-semibold tracking-tight">
+          {project.title}
+          {project.relatedExperience ? (
+            <span className="text-muted">
+              {" - "}
+              <Link
+                href={`/experience#${project.relatedExperience.slug}`}
+                className="underline decoration-line underline-offset-4 transition hover:text-brand"
+              >
+                {project.relatedExperience.company}
+              </Link>
+            </span>
+          ) : null}
+        </h3>
         <p className="mt-3 text-sm leading-7 text-muted">{project.description}</p>
 
         <div className="mt-4 flex flex-wrap gap-2">

@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { ExternalLink, Pause, Play, Volume2 } from "lucide-react";
+import { ExternalLink, Pause, Play } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
+import { useMusicPreviewVolume } from "@/components/music-preview-volume";
 import type { SpotifyRelease } from "@/lib/spotify";
 
 type SpotifyReleaseCardProps = {
@@ -14,7 +15,7 @@ export function SpotifyReleaseCard({ release }: SpotifyReleaseCardProps) {
   const t = useTranslations("MusicPage");
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [volume, setVolume] = useState(0.7);
+  const { volume, activePreviewId, setActivePreviewId } = useMusicPreviewVolume();
 
   useEffect(() => {
     if (!audioRef.current) {
@@ -33,13 +34,27 @@ export function SpotifyReleaseCard({ release }: SpotifyReleaseCardProps) {
 
     function handleEnded() {
       setIsPlaying(false);
+      if (activePreviewId === release.id) {
+        setActivePreviewId(null);
+      }
     }
 
     audio.addEventListener("ended", handleEnded);
     return () => {
       audio.removeEventListener("ended", handleEnded);
     };
-  }, []);
+  }, [activePreviewId, release.id, setActivePreviewId]);
+
+  useEffect(() => {
+    if (!audioRef.current || !isPlaying) {
+      return;
+    }
+
+    if (activePreviewId && activePreviewId !== release.id) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    }
+  }, [activePreviewId, isPlaying, release.id]);
 
   async function togglePlayback() {
     if (!audioRef.current || !release.previewUrl) {
@@ -49,12 +64,16 @@ export function SpotifyReleaseCard({ release }: SpotifyReleaseCardProps) {
     if (isPlaying) {
       audioRef.current.pause();
       setIsPlaying(false);
+      if (activePreviewId === release.id) {
+        setActivePreviewId(null);
+      }
       return;
     }
 
     try {
       await audioRef.current.play();
       setIsPlaying(true);
+      setActivePreviewId(release.id);
     } catch {
       setIsPlaying(false);
     }
@@ -62,7 +81,7 @@ export function SpotifyReleaseCard({ release }: SpotifyReleaseCardProps) {
 
   return (
     <article className="group rounded-2xl border border-line/80 bg-black/20 p-4 transition hover:border-brand/80 hover:shadow-soft">
-      <div className="flex items-start gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
         <Image
           src={release.image}
           alt={release.title}
@@ -87,21 +106,6 @@ export function SpotifyReleaseCard({ release }: SpotifyReleaseCardProps) {
                   {isPlaying ? <Pause className="h-4 w-4" aria-hidden="true" /> : <Play className="h-4 w-4" aria-hidden="true" />}
                   <span>{isPlaying ? t("pausePreview") : t("playPreview")}</span>
                 </button>
-
-                <label className="inline-flex items-center gap-2 text-sm text-muted">
-                  <Volume2 className="h-4 w-4" aria-hidden="true" />
-                  <span className="sr-only">{t("volume")}</span>
-                  <input
-                    type="range"
-                    min="0"
-                    max="1"
-                    step="0.05"
-                    value={volume}
-                    onChange={(event) => setVolume(Number(event.target.value))}
-                    className="accent-brand"
-                    aria-label={t("volume")}
-                  />
-                </label>
                 <audio ref={audioRef} src={release.previewUrl} preload="none" />
               </>
             ) : (
@@ -113,7 +117,7 @@ export function SpotifyReleaseCard({ release }: SpotifyReleaseCardProps) {
           href={release.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line/80 text-muted transition hover:border-brand hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+          className="inline-flex h-9 w-9 shrink-0 items-center justify-center self-start rounded-full border border-line/80 text-muted transition hover:border-brand hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:mt-1"
           aria-label={t("openSpotify")}
         >
           <ExternalLink className="h-4 w-4" aria-hidden="true" />

@@ -1,8 +1,13 @@
 import { ExperienceCard } from "@/components/experience-card";
 import type { ExperienceFrontmatter } from "@/lib/content";
 
+type ExperienceTimelineEntry = {
+  slug: string;
+  frontmatter: ExperienceFrontmatter;
+};
+
 type ExperienceTimelineProps = {
-  entries: ExperienceFrontmatter[];
+  entries: ExperienceTimelineEntry[];
   locale: string;
   labels: {
     location: string;
@@ -18,7 +23,13 @@ export function ExperienceTimeline({ entries, locale, labels }: ExperienceTimeli
   return (
     <div className="space-y-6 md:border-l md:border-line/80 md:pl-8">
       {entries.map((entry) => (
-        <ExperienceCard key={entry.company} entry={entry} locale={locale} labels={labels} />
+        <ExperienceCard
+          key={entry.slug}
+          entry={entry.frontmatter}
+          entryId={entry.slug}
+          locale={locale}
+          labels={labels}
+        />
       ))}
     </div>
   );

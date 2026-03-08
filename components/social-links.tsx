@@ -109,7 +109,7 @@ export async function SocialLinks({ groups = ["professional", "music", "band"], 
                     rel="noopener noreferrer"
                     aria-label={label}
                     title={label}
-                    className="inline-flex items-center gap-2 rounded-md border border-line/80 px-3 py-2 text-sm text-muted transition hover:scale-105 hover:border-brand hover:opacity-80 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/80 px-3 py-2 text-sm text-muted transition hover:scale-[1.02] hover:border-brand hover:opacity-80 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:w-auto sm:justify-start"
                   >
                     <Icon className="h-4 w-4" aria-hidden="true" />
                     <span>{label}</span>

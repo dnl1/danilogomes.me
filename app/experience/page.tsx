@@ -61,7 +61,7 @@ export default async function ExperiencePage() {
           <h2 className="font-mono text-lg text-brand">{t("timelineTitle")}</h2>
         </div>
         <ExperienceTimeline
-          entries={entries.map((entry) => entry.frontmatter)}
+          entries={entries}
           locale={locale}
           labels={{
             location: t("location"),

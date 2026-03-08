@@ -11,7 +11,10 @@
     "caseStudies": "Estudos de Caso",
     "music": "Música",
     "blog": "Blog",
-    "contact": "Contato"
+    "contact": "Contato",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "mobileNavigation": "Navegação principal no celular"
   },
   "LanguageSelector": {
     "label": "Selecionar idioma"
@@ -173,14 +176,18 @@
     "dnl1Label": "Projeto Solo",
     "dnl1Title": "dnl1",
     "dnl1Description": "Projetos de música eletrônica, lançamentos e experimentos mais recentes publicados no Spotify.",
+    "inspirationsTitle": "Inspirações",
+    "dnl1Inspirations": "Tento fazer um som em torno do melodic progressive house, com influências de Armin van Buuren, deadmau5 e Charlotte de Witte.",
     "undercolinLabel": "Projeto de Banda",
     "undercolinTitle": "Undercolin",
     "undercolinDescription": "Projeto de banda melodic hardcore com lançamentos e catálogo atual no Spotify.",
+    "undercolinInspirations": "Hardcore melódico de São Paulo, com forte influência de bandas como Dead Fish, Comeback Kid e diversas bandas dos anos 2000.",
     "openSpotify": "Abrir no Spotify",
     "listenEverywhere": "Ouça em Todas as Plataformas",
     "listenEverywhereDescription": "O projeto dnl1 também está disponível nas plataformas abaixo, com links diretos para o perfil do artista em cada serviço.",
     "followOn": "Siga em",
-    "followOnDescription": "Acompanhe dnl1 e Undercolin nas principais plataformas de música e redes para receber novos lançamentos e atualizações.",
+    "dnl1FollowOnDescription": "Acompanhe dnl1 nas principais plataformas de música e redes para receber novos lançamentos e atualizações.",
+    "undercolinFollowOnDescription": "Acompanhe Undercolin nas principais plataformas de música e redes para receber novos lançamentos e atualizações.",
     "playPreview": "Tocar preview",
     "pausePreview": "Pausar preview",
     "volume": "Volume",

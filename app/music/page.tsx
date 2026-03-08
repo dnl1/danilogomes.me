@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ExternalLink } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { FaAmazon } from "react-icons/fa6";
+import { FaAmazon, FaGlobe } from "react-icons/fa6";
 import type { IconBaseProps } from "react-icons";
 import { SiInstagram, SiSoundcloud, SiSpotify, SiTidal, SiYoutubemusic } from "react-icons/si";
 import { siDeezer } from "simple-icons";
@@ -9,6 +9,7 @@ import { BackButton } from "@/components/back-button";
 import { Container } from "@/components/container";
 import { FollowPlatforms, type FollowPlatformItem } from "@/components/follow-platforms";
 import { MusicPlatforms, type MusicPlatformItem } from "@/components/music-platforms";
+import { MusicPreviewVolumeProvider } from "@/components/music-preview-volume";
 import { SpotifyReleaseCard } from "@/components/spotify-release-card";
 import { buildMetadata } from "@/lib/metadata";
 import { getLatestSpotifyReleasesByArtist } from "@/lib/spotify";
@@ -92,106 +93,175 @@ export default async function MusicPage() {
       name: "YouTube Music",
       href: "https://music.youtube.com/channel/UCoOtJ5YTZ2RiSAVlRHfJx-g",
       icon: SiYoutubemusic
+    }
+  ];
+  const undercolinFollowPlatforms: FollowPlatformItem[] = [
+    {
+      name: "Spotify",
+      href: "https://open.spotify.com/artist/6nwROjcnQdTIbv2zIu6Frn",
+      icon: SiSpotify
     },
     {
-      name: "Instagram - Undercolin",
+      name: "Instagram",
       href: "https://www.instagram.com/undercolin/",
       icon: SiInstagram
     }
   ];
+  const undercolinPlatforms: MusicPlatformItem[] = [
+    {
+      name: "Spotify",
+      href: "https://open.spotify.com/artist/6nwROjcnQdTIbv2zIu6Frn",
+      icon: SiSpotify
+    },
+    {
+      name: "Amazon Music",
+      href: "https://music.amazon.com/artists/B0FKNCS3HK/undercolin",
+      icon: FaAmazon
+    },
+    {
+      name: "Deezer",
+      href: "https://www.deezer.com/en/artist/338826521",
+      icon: DeezerIcon
+    },
+    {
+      name: "TIDAL",
+      href: "https://tidal.com/artist/64583918",
+      icon: SiTidal
+    },
+    {
+      name: "Website",
+      href: "https://undercolin.vercel.app/",
+      icon: FaGlobe
+    }
+  ];
+  const hasAnyPreview = [...dnl1Releases, ...undercolinReleases].some((release) => Boolean(release.previewUrl));
 
   return (
-    <Container className="py-16 md:py-24">
-      <BackButton label={layoutT("back")} />
-      <header className="mb-10 max-w-3xl">
-        <p className="font-mono text-sm text-brand">{t("eyebrow")}</p>
-        <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{t("heading")}</h1>
-        <p className="mt-4 text-muted">{t("intro")}</p>
-      </header>
+    <MusicPreviewVolumeProvider showControl={hasAnyPreview}>
+      <Container className="pb-24 pt-10 md:pb-28 md:pt-10">
+        <BackButton label={layoutT("back")} />
+        <header className="mb-10 max-w-3xl">
+          <p className="font-mono text-sm text-brand">{t("eyebrow")}</p>
+          <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{t("heading")}</h1>
+          <p className="mt-4 text-muted">{t("intro")}</p>
+        </header>
 
-      <section className="mb-12 rounded-2xl border border-line/80 bg-black/20 p-6">
-        <p className="max-w-3xl text-sm leading-7 text-muted">{t("externalDescription")}</p>
+        <section className="mb-12 rounded-2xl border border-line/80 bg-black/20 p-6">
+          <p className="max-w-3xl text-sm leading-7 text-muted">{t("externalDescription")}</p>
+        </section>
 
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <a
-            href="https://open.spotify.com/intl-pt/artist/7IbyntkWwrrsRd9RSTRo8J"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-xl border border-line/80 bg-black/20 p-5 transition hover:border-brand/80 hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-          >
+        <section className="mb-12 rounded-2xl border border-line/80 bg-black/20 p-6">
+          <div className="mb-6">
             <p className="font-mono text-xs text-brand">{t("dnl1Label")}</p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight group-hover:text-brand">{t("dnl1Title")}</h2>
-            <p className="mt-3 text-sm text-muted">{t("dnl1Description")}</p>
-            <span className="mt-5 inline-flex items-center gap-2 text-sm text-fg">
-              {t("openSpotify")}
-              <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            </span>
-          </a>
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight">{t("dnl1Title")}</h2>
+            <p className="mt-3 max-w-3xl text-sm text-muted">{t("dnl1Description")}</p>
+            <div className="mt-4 max-w-3xl rounded-xl border border-brand/30 bg-brand/10 px-4 py-3">
+              <p className="font-mono text-xs uppercase tracking-wide text-brand">{t("inspirationsTitle")}</p>
+              <p className="mt-2 text-sm leading-7 text-fg/90">{t("dnl1Inspirations")}</p>
+            </div>
+          </div>
 
-          <a
-            href="https://open.spotify.com/intl-pt/artist/6nwROjcnQdTIbv2zIu6Frn"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group rounded-xl border border-line/80 bg-black/20 p-5 transition hover:border-brand/80 hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
-          >
+          <div className="grid gap-4">
+            <a
+              href="https://open.spotify.com/intl-pt/artist/7IbyntkWwrrsRd9RSTRo8J"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-xl border border-line/80 bg-black/20 p-5 transition hover:border-brand/80 hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+            >
+              <span className="mt-5 inline-flex items-center gap-2 text-sm text-fg">
+                {t("openSpotify")}
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </a>
+          </div>
+
+          <FollowPlatforms
+            title={t("followOn")}
+            description={t("dnl1FollowOnDescription")}
+            platforms={dnl1FollowPlatforms}
+            className="mt-8"
+          />
+
+          <section className="mt-8">
+            <div className="mb-6">
+              <h3 className="font-mono text-lg text-brand">{t("latestSpotifyDnl1")}</h3>
+              <p className="mt-2 max-w-2xl text-sm text-muted">
+                {dnl1Releases.length ? t("latestSpotifyDescription") : t("latestSpotifyFallback")}
+              </p>
+            </div>
+            {dnl1Releases.length ? (
+              <div className="grid gap-4 md:grid-cols-2">
+                {dnl1Releases.map((release) => (
+                  <SpotifyReleaseCard key={release.id} release={release} />
+                ))}
+              </div>
+            ) : null}
+          </section>
+
+          <MusicPlatforms
+            title={t("listenEverywhere")}
+            description={t("listenEverywhereDescription")}
+            platforms={dnl1Platforms}
+            className="mt-8"
+          />
+        </section>
+
+        <section className="rounded-2xl border border-line/80 bg-black/20 p-6">
+          <div className="mb-6">
             <p className="font-mono text-xs text-brand">{t("undercolinLabel")}</p>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight group-hover:text-brand">
-              {t("undercolinTitle")}
-            </h2>
-            <p className="mt-3 text-sm text-muted">{t("undercolinDescription")}</p>
-            <span className="mt-5 inline-flex items-center gap-2 text-sm text-fg">
-              {t("openSpotify")}
-              <ExternalLink className="h-4 w-4" aria-hidden="true" />
-            </span>
-          </a>
-        </div>
-      </section>
-
-      <FollowPlatforms
-        title={t("followOn")}
-        description={t("followOnDescription")}
-        platforms={dnl1FollowPlatforms}
-        className="mb-12"
-      />
-
-      <section className="mb-12">
-        <div className="mb-6">
-          <h2 className="font-mono text-lg text-brand">{t("latestSpotifyDnl1")}</h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted">
-            {dnl1Releases.length ? t("latestSpotifyDescription") : t("latestSpotifyFallback")}
-          </p>
-        </div>
-        {dnl1Releases.length ? (
-          <div className="grid gap-4 md:grid-cols-2">
-            {dnl1Releases.map((release) => (
-              <SpotifyReleaseCard key={release.id} release={release} />
-            ))}
+            <h2 className="mt-2 text-3xl font-semibold tracking-tight">{t("undercolinTitle")}</h2>
+            <p className="mt-3 max-w-3xl text-sm text-muted">{t("undercolinDescription")}</p>
+            <div className="mt-4 max-w-3xl rounded-xl border border-brand/30 bg-brand/10 px-4 py-3">
+              <p className="font-mono text-xs uppercase tracking-wide text-brand">{t("inspirationsTitle")}</p>
+              <p className="mt-2 text-sm leading-7 text-fg/90">{t("undercolinInspirations")}</p>
+            </div>
           </div>
-        ) : null}
-      </section>
 
-      <section>
-        <div className="mb-6">
-          <h2 className="font-mono text-lg text-brand">{t("latestSpotifyUndercolin")}</h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted">
-            {undercolinReleases.length ? t("latestSpotifyUndercolinDescription") : t("latestSpotifyFallback")}
-          </p>
-        </div>
-        {undercolinReleases.length ? (
-          <div className="grid gap-4 md:grid-cols-2">
-            {undercolinReleases.map((release) => (
-              <SpotifyReleaseCard key={release.id} release={release} />
-            ))}
+          <div className="grid gap-4">
+            <a
+              href="https://open.spotify.com/intl-pt/artist/6nwROjcnQdTIbv2zIu6Frn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-xl border border-line/80 bg-black/20 p-5 transition hover:border-brand/80 hover:shadow-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand"
+            >
+              <span className="mt-5 inline-flex items-center gap-2 text-sm text-fg">
+                {t("openSpotify")}
+                <ExternalLink className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </a>
           </div>
-        ) : null}
-      </section>
 
-      <MusicPlatforms
-        title={t("listenEverywhere")}
-        description={t("listenEverywhereDescription")}
-        platforms={dnl1Platforms}
-        className="mt-12"
-      />
-    </Container>
+          <FollowPlatforms
+            title={t("followOn")}
+            description={t("undercolinFollowOnDescription")}
+            platforms={undercolinFollowPlatforms}
+            className="mt-8"
+          />
+
+          <section className="mt-8">
+            <div className="mb-6">
+              <h3 className="font-mono text-lg text-brand">{t("latestSpotifyUndercolin")}</h3>
+              <p className="mt-2 max-w-2xl text-sm text-muted">
+                {undercolinReleases.length ? t("latestSpotifyUndercolinDescription") : t("latestSpotifyFallback")}
+              </p>
+            </div>
+            {undercolinReleases.length ? (
+              <div className="grid gap-4 md:grid-cols-2">
+                {undercolinReleases.map((release) => (
+                  <SpotifyReleaseCard key={release.id} release={release} />
+                ))}
+              </div>
+            ) : null}
+          </section>
+
+          <MusicPlatforms
+            title={t("listenEverywhere")}
+            description={t("latestSpotifyUndercolinDescription")}
+            platforms={undercolinPlatforms}
+            className="mt-8"
+          />
+        </section>
+      </Container>
+    </MusicPreviewVolumeProvider>
   );
 }

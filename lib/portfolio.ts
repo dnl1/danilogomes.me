@@ -20,6 +20,10 @@ export type PortfolioProject = {
   problem: string;
   approach: string;
   impact: string;
+  relatedExperience?: {
+    slug: string;
+    company: string;
+  };
 };
 
 function resolveLogoPath(names: string | string[]) {
@@ -114,14 +118,14 @@ const experienceEntriesByLocale: Record<Locale, ExperienceEntry[]> = {
       logo: logoPaths.orchid,
       role: "Software Engineering Lead",
       summary:
-        "Currently leading engineering initiatives across architecture, mentoring, and delivery while building modern web platforms with Python backends and TypeScript frontends.",
+        "Currently leading engineering initiatives across architecture, mentoring, and delivery while building modern web platforms entirely with Next.js and TypeScript.",
       responsibilities: [
         "Lead engineering initiatives from system design through delivery.",
-        "Define architecture for backend services and modern web platforms.",
+        "Define architecture for full-stack Next.js services and modern web platforms.",
         "Mentor engineers and establish technical direction across projects.",
-        "Build product platforms with Python APIs, Next.js frontends, and Vercel deployment workflows."
+        "Build product platforms fully in Next.js, with TypeScript and Vercel deployment workflows."
       ],
-      technologies: ["Python", "FastAPI", "Flask", "TypeScript", "Next.js", "Vercel"],
+      technologies: ["Next.js", "TypeScript", "Vercel"],
       impact: [
         "Improved execution through clearer architecture and stronger engineering leadership.",
         "Accelerated delivery with a pragmatic full-stack approach across backend, frontend, and platform concerns.",
@@ -197,14 +201,14 @@ const experienceEntriesByLocale: Record<Locale, ExperienceEntry[]> = {
       logo: logoPaths.orchid,
       role: "Software Engineering Lead",
       summary:
-        "Atualmente lidero iniciativas de engenharia entre arquitetura, mentoria e entrega, construindo plataformas web modernas com backends em Python e frontends em TypeScript.",
+        "Atualmente lidero iniciativas de engenharia entre arquitetura, mentoria e entrega, construindo plataformas web modernas integralmente com Next.js e TypeScript.",
       responsibilities: [
         "Lidero iniciativas de engenharia desde o desenho do sistema até a entrega.",
-        "Defino arquitetura para serviços backend e plataformas web modernas.",
+        "Defino arquitetura para serviços full stack em Next.js e plataformas web modernas.",
         "Mentoro engenheiros e estabeleço direção técnica entre projetos.",
-        "Construo plataformas de produto com APIs em Python, frontends em Next.js e workflows de deploy na Vercel."
+        "Construo plataformas de produto totalmente em Next.js, com TypeScript e workflows de deploy na Vercel."
       ],
-      technologies: ["Python", "FastAPI", "Flask", "TypeScript", "Next.js", "Vercel"],
+      technologies: ["Next.js", "TypeScript", "Vercel"],
       impact: [
         "Melhorei a execução com arquitetura mais clara e liderança de engenharia mais forte.",
         "Acelerei entregas com uma abordagem full stack pragmática entre backend, frontend e plataforma.",
@@ -226,7 +230,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Worked close to the platform core with messaging protocols and proprietary low-level libraries, shaping transport layers and service interactions suitable for trading workflows.",
       impact:
-        "Contributed to the foundation and evolution of infrastructure supporting business-critical trading operations."
+        "Contributed to the foundation and evolution of infrastructure supporting business-critical trading operations.",
+      relatedExperience: {
+        slug: "xp-inc",
+        company: "XP Inc"
+      }
     },
     {
       title: "Corporate Account Onboarding Platform",
@@ -238,7 +246,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Founded the team, drove recruitment, designed the platform architecture, and established the engineering direction for delivery and long-term maintainability.",
       impact:
-        "Created a clearer technical and organizational structure for the onboarding domain, improving ownership and scalability."
+        "Created a clearer technical and organizational structure for the onboarding domain, improving ownership and scalability.",
+      relatedExperience: {
+        slug: "xp-inc",
+        company: "XP Inc"
+      }
     },
     {
       title: "Enterprise Platform for MODEC",
@@ -250,7 +262,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Led the move toward microservices and microfrontend architecture, owning critical modules and coordinating architectural alignment with stakeholders and consultancies.",
       impact:
-        "Improved modularity, delivery autonomy, and maintainability for a platform used in complex offshore operational contexts."
+        "Improved modularity, delivery autonomy, and maintainability for a platform used in complex offshore operational contexts.",
+      relatedExperience: {
+        slug: "shape",
+        company: "Shape"
+      }
     },
     {
       title: "Healthcare Accumulator Processing Systems",
@@ -262,7 +278,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Focused on SQL optimization, batch-processing efficiency, and incremental modernization paths that preserved operational continuity.",
       impact:
-        "Improved throughput and maintainability in large-scale healthcare financial processing while reducing delivery risk."
+        "Improved throughput and maintainability in large-scale healthcare financial processing while reducing delivery risk.",
+      relatedExperience: {
+        slug: "rxsense",
+        company: "RxSense"
+      }
     },
     {
       title: "Orchid JMS",
@@ -274,7 +294,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Built a full-stack operational platform around TypeScript, Next.js, and configurable workflow structures, supporting custom data fields, task-oriented process control, reporting, and end-to-end case visibility.",
       impact:
-        "Improved operational control across complex agency workflows, reduced manual coordination, and created a more scalable system for intake, screening, matching, and case management."
+        "Improved operational control across complex agency workflows, reduced manual coordination, and created a more scalable system for intake, screening, matching, and case management.",
+      relatedExperience: {
+        slug: "orchid",
+        company: "Orchid Software Solutions"
+      }
     }
   ],
   pt: [
@@ -288,7 +312,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Atuei próximo ao core da plataforma com protocolos de mensageria e bibliotecas proprietárias de baixo nível, ajudando a estruturar camadas de transporte e interações entre serviços adequadas ao fluxo de negociação.",
       impact:
-        "Contribui para a fundação e evolução da infraestrutura que suporta operações de trading críticas para o negócio."
+        "Contribui para a fundação e evolução da infraestrutura que suporta operações de trading críticas para o negócio.",
+      relatedExperience: {
+        slug: "xp-inc",
+        company: "XP Inc"
+      }
     },
     {
       title: "Corporate Account Onboarding Platform",
@@ -300,7 +328,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Fundei o time, conduzi recrutamento, desenhei a arquitetura da plataforma e estabeleci a direção de engenharia para entrega e sustentacao no longo prazo.",
       impact:
-        "Criei uma estrutura técnica e organizacional mais clara para o domínio de onboarding, melhorando ownership e escalabilidade."
+        "Criei uma estrutura técnica e organizacional mais clara para o domínio de onboarding, melhorando ownership e escalabilidade.",
+      relatedExperience: {
+        slug: "xp-inc",
+        company: "XP Inc"
+      }
     },
     {
       title: "Enterprise Platform for MODEC",
@@ -312,7 +344,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Liderei a migração para uma arquitetura de microserviços e microfrontends, com ownership de módulos críticos e alinhamento arquitetural com stakeholders e consultorias.",
       impact:
-        "Melhorei modularidade, autonomia de entrega e manutenção para uma plataforma usada em contextos offshore complexos."
+        "Melhorei modularidade, autonomia de entrega e manutenção para uma plataforma usada em contextos offshore complexos.",
+      relatedExperience: {
+        slug: "shape",
+        company: "Shape"
+      }
     },
     {
       title: "Healthcare Accumulator Processing Systems",
@@ -324,7 +360,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Foquei em otimização de SQL, eficiencia de batch processing e caminhos incrementais de modernização que preservassem a continuidadé operacional.",
       impact:
-        "Melhorei throughput e manutenção em fluxos financeiros de saúde de larga escala, reduzindo risco de entrega."
+        "Melhorei throughput e manutenção em fluxos financeiros de saúde de larga escala, reduzindo risco de entrega.",
+      relatedExperience: {
+        slug: "rxsense",
+        company: "RxSense"
+      }
     },
     {
       title: "Orchid JMS",
@@ -336,7 +376,11 @@ const portfolioProjectsByLocale: Record<Locale, PortfolioProject[]> = {
       approach:
         "Construí uma plataforma full stack em Next.js e estruturas configuráveis de workflow, suportando campos customizados, controle orientado a tarefas, reporting e visibilidade ponta a ponta dos casos.",
       impact:
-        "Melhorei o controle operacional de fluxos complexos da agência, reduzi coordenação manual e criei uma base mais escalável para intake, screening, matching e case management."
+        "Melhorei o controle operacional de fluxos complexos da agência, reduzi coordenação manual e criei uma base mais escalável para intake, screening, matching e case management.",
+      relatedExperience: {
+        slug: "orchid",
+        company: "Orchid Software Solutions"
+      }
     }
   ]
 };

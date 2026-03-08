@@ -5,6 +5,7 @@ import { formatMonthYear } from "@/lib/utils";
 
 type ExperienceCardProps = {
   entry: ExperienceFrontmatter;
+  entryId?: string;
   locale: string;
   labels: {
     location: string;
@@ -16,7 +17,7 @@ type ExperienceCardProps = {
   };
 };
 
-export function ExperienceCard({ entry, locale, labels }: ExperienceCardProps) {
+export function ExperienceCard({ entry, entryId, locale, labels }: ExperienceCardProps) {
   const locationFlag = getFlagCode(entry.location);
   const logoContainerClass =
     entry.logoBackground === "light"
@@ -24,7 +25,7 @@ export function ExperienceCard({ entry, locale, labels }: ExperienceCardProps) {
       : "border-line/80 bg-black/30";
 
   return (
-    <article className="relative rounded-2xl border border-line/80 bg-black/20 p-6">
+    <article id={entryId} className="relative rounded-2xl border border-line/80 bg-black/20 p-6 scroll-mt-24">
       <span className="absolute -left-[2.05rem] top-10 hidden h-3 w-3 rounded-full border border-line/80 bg-brand md:block" />
       <div className="flex items-start gap-4">
         <div

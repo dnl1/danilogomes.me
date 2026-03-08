@@ -29,7 +29,10 @@ export function LanguageSelector() {
   }
 
   return (
-    <div className="flex items-center gap-1 rounded-xl border border-line/80 bg-black/30 p-1" aria-label={t("label")}>
+    <div
+      className="inline-flex w-full items-center gap-1 rounded-xl border border-line/80 bg-black/20 p-1 sm:w-auto"
+      aria-label={t("label")}
+    >
       {languageOptions.map((option) => {
         const active = option.value === locale;
 
@@ -39,8 +42,10 @@ export function LanguageSelector() {
             type="button"
             disabled={isPending || active}
             onClick={() => handleChange(option.value)}
-            className={`inline-flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-xs transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand ${
-              active ? "bg-white/10 text-fg" : "text-muted hover:text-fg"
+            className={`inline-flex min-h-9 flex-1 items-center justify-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 text-xs transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand sm:flex-none sm:text-sm ${
+              active
+                ? "border border-brand/40 bg-brand/10 text-fg"
+                : "border border-transparent text-muted hover:border-line/80 hover:bg-black/20 hover:text-fg"
             }`}
             aria-pressed={active}
             aria-label={`${t("label")}: ${option.label}`}

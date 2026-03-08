@@ -1,7 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { Container } from "@/components/container";
-import { LanguageSelector } from "@/components/language-selector";
+import { NavbarClient } from "@/components/navbar-client";
 
 const navItems = [
   { href: "/about", key: "about" },
@@ -14,6 +14,7 @@ const navItems = [
 
 export async function Navbar() {
   const t = await getTranslations("Navbar");
+  const items = navItems.map((item) => ({ href: item.href, label: t(item.key) }));
 
   return (
     <header className="sticky top-0 z-40 border-b border-line/80 bg-bg/90 backdrop-blur">
@@ -22,24 +23,14 @@ export async function Navbar() {
           <span className="text-brand">~/</span>danilo gomes
         </Link>
 
-        <nav
-          aria-label="Primary"
-          className="flex items-center gap-3 overflow-x-auto text-xs md:gap-6 md:text-sm"
-        >
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm text-muted transition hover:text-fg"
-            >
-              {t(item.key)}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <LanguageSelector />
-        </div>
+        <NavbarClient
+          navItems={items}
+          labels={{
+            openMenu: t("openMenu"),
+            closeMenu: t("closeMenu"),
+            mobileNavigation: t("mobileNavigation")
+          }}
+        />
       </Container>
     </header>
   );
